@@ -52,10 +52,6 @@ export default {
           },
         ],
       },
-      {
-        test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
-        loader: '@ngtools/webpack',
-      },
     ],
   },
   plugins: [
