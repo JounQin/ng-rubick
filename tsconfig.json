@@ -10,7 +10,7 @@
     "noImplicitAny": true,
     "lib": ["dom", "esnext"],
     "paths": {
-      "*": ["src/*"]
+      "*": ["src/*", "node_modules/*"]
     },
     "plugins": [{ "name": "@angular/language-service" }],
     "sourceMap": true,

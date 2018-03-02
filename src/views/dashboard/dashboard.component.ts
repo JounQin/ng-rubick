@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-  template: '<div>dashboard</div>',
+  templateUrl: './dashboard.component.pug',
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {}

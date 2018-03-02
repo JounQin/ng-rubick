@@ -1,5 +1,5 @@
 import _debug from 'debug'
-import Koa, { Middleware } from 'koa'
+import Koa from 'koa'
 import compose from 'koa-compose'
 import compress from 'koa-compress'
 import logger from 'koa-logger'
@@ -11,7 +11,7 @@ const debug = _debug('rb:server')
 
 const app = new Koa()
 
-const middlewares: Middleware[] = [
+const middlewares: Koa.Middleware[] = [
   logger(),
   compress(),
   (ctx, next) => {

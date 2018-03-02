@@ -1,4 +1,4 @@
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
+import { AngularCompilerPlugin } from '@ngtools/webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
@@ -21,45 +21,32 @@ export default {
   module: {
     rules: [
       {
-        test: /\.pug/,
+        test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader'],
       },
       {
-        test: /\.ts$/,
+        test: /\.scss$/,
         use: [
-          // {
-          //   loader: 'awesome-typescript-loader',
-          //   options: {
-          //     useCache: true,
-          //     forceIsolatedModules: true,
-          //     reportFiles: ['src/**/*.ts'],
-          //   },
-          // },
-          {
-            loader: 'ts-loader',
-            options: {
-              compilerOptions: {
-                module: 'esnext',
-              },
-            },
-          },
-          'angular2-template-loader',
-          {
-            loader: 'angular-router-loader',
-            options: {
-              loader: 'import',
-            },
-          },
+          'exports-loader?module.exports.toString()',
+          'css-loader',
+          'sass-loader',
         ],
+      },
+      {
+        test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+        loader: '@ngtools/webpack',
       },
     ],
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/angular[\\|/]core/),
     new webpack.DefinePlugin({
       __DEV__,
     }),
-    new HardSourceWebpackPlugin(),
+    new AngularCompilerPlugin({
+      tsConfigPath: resolve('tsconfig.json'),
+      entryModule: resolve('src/views/app.module#AppModule'),
+      sourceMap: true,
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
     }),
@@ -73,4 +60,4 @@ export default {
       name: 'manifest',
     },
   },
-}
+} as webpack.Configuration
