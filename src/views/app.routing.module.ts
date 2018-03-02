@@ -5,13 +5,17 @@ import { RouterModule } from '@angular/router'
 @NgModule({
   imports: [
     RouterModule.forRoot([
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: './dashboard/dashboard.module#DashboardModule',
+      // },
       {
-        path: 'dashboard',
-        loadChildren: './dashboard/dashboard.module#DashboardModule',
+        path: 'login',
+        loadChildren: './login/login.module#LoginModule',
       },
       {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/login',
         pathMatch: 'full',
       },
     ]),

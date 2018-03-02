@@ -1,12 +1,37 @@
 import { AngularCompilerPlugin } from '@ngtools/webpack'
+import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
 import { __DEV__, NODE_ENV, resolve, serverHost, serverPort } from './config'
 
+const sourceMap = __DEV__
+
+const cssLoaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      minimize: !__DEV__,
+      sourceMap,
+    },
+  },
+  {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap,
+    },
+  },
+  {
+    loader: 'sass-loader',
+    options: {
+      sourceMap,
+    },
+  },
+]
+
 export default {
   entry: {
-    app: ['zone.js', './src/index.ts'],
+    app: ['styles/app.scss', 'zone.js', './src/index.ts'],
   },
   output: {
     publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : '/',
@@ -25,12 +50,16 @@ export default {
         use: ['html-loader', 'pug-html-loader'],
       },
       {
+        test: /\.component\.scss$/,
+        use: ['exports-loader?module.exports.toString()', ...cssLoaders],
+      },
+      {
         test: /\.scss$/,
-        use: [
-          'exports-loader?module.exports.toString()',
-          'css-loader',
-          'sass-loader',
-        ],
+        exclude: /\.component\.scss$/,
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: cssLoaders,
+        }),
       },
       {
         test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
@@ -47,10 +76,17 @@ export default {
       entryModule: resolve('src/views/app.module#AppModule'),
       sourceMap: true,
     }),
+    new ExtractTextWebpackPlugin({
+      filename: 'app.[contenthash].js',
+      disable: true,
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
     }),
   ],
+  performance: {
+    hints: false,
+  },
   optimization: {
     splitChunks: {
       name: 'vendors',
