@@ -22,6 +22,7 @@ script:
   - set -e
   - yarn lint
   - yarn build
+  - cp dist/index.html dist/404.html
   - 'if [[ $TRAVIS_BRANCH = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]]; then yarn sync:push; fi'
 
 after_script: greenkeeper-lockfile-upload
