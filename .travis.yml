@@ -2,6 +2,10 @@ language: node_js
 
 node_js: stable
 
+env:
+  global:
+    - ROUTE_BASE=/ng-rubick
+
 cache: yarn
 
 before_install:
@@ -17,5 +21,6 @@ script:
   - set -e
   - yarn lint
   - yarn build
+  - 'if [[ $TRAVIS_BRANCH = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]]; then yarn sync:push; fi'
 
 after_script: greenkeeper-lockfile-upload

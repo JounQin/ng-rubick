@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core'
 
-import { SharedModule } from 'shared/shared.module'
+import { SharedModule, mergeTranslations } from 'shared/shared.module'
 
 import { LoginRoutingModule } from './login.routing.module'
 
 import { LoginComponent } from './login.component'
+
+mergeTranslations(require.context('.', true, I18N_REGEX))
 
 @NgModule({
   imports: [SharedModule, LoginRoutingModule],

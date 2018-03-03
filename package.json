@@ -11,7 +11,9 @@
     "build": "rimraf dist && env-cmd --fallback .env.local env-cmd .env webpack --config build/webpack.config.ts --colors --progress",
     "start": "env-cmd --fallback .env.local env-cmd .env ts-node server",
     "lint": "tslint -p . -t stylish '**/*.ts'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "sync:pull": "bash build/sync-pull.sh",
+    "sync:push": "bash build/sync-push.sh"
   },
   "lint-staged": {
     "*.{json,md}": ["prettier --write", "git add"],
@@ -49,6 +51,8 @@
     "koa-compress": "^2.0.0",
     "koa-logger": "^3.1.0",
     "koa-static-cache": "^5.1.2",
+    "lodash": "^4.17.5",
+    "lodash-es": "^4.17.5",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"
   },
@@ -64,6 +68,7 @@
     "@types/koa-compress": "^2.0.8",
     "@types/koa-logger": "^3.1.0",
     "@types/koa-webpack": "^1.0.0",
+    "@types/lodash": "^4.14.104",
     "@types/node": "^9.4.6",
     "@types/webpack": "^3.8.8",
     "autoprefixer": "^8.0.0",

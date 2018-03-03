@@ -3,7 +3,14 @@ import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
-import { __DEV__, NODE_ENV, resolve, serverHost, serverPort } from './config'
+import {
+  NODE_ENV,
+  ROUTE_BASE,
+  __DEV__,
+  resolve,
+  serverHost,
+  serverPort,
+} from './config'
 
 const sourceMap = __DEV__
 
@@ -34,12 +41,15 @@ export default {
     app: ['styles/app.scss', 'zone.js', './src/index.ts'],
   },
   output: {
-    publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : '/',
+    publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : '',
     path: resolve('dist'),
     filename: `[name].[${__DEV__ ? 'hash' : 'chunkhash'}].js`,
   },
   mode: NODE_ENV,
   resolve: {
+    alias: {
+      lodash$: 'lodash-es',
+    },
     modules: [resolve('src'), 'node_modules'],
     extensions: ['.ts', '.js'],
   },
@@ -70,6 +80,8 @@ export default {
   plugins: [
     new webpack.DefinePlugin({
       __DEV__,
+      I18N_REGEX: /([\w-]*[\w]+)\.i18n\.json$/.toString(),
+      ROUTE_BASE: JSON.stringify(ROUTE_BASE),
     }),
     new AngularCompilerPlugin({
       tsConfigPath: resolve('tsconfig.json'),
@@ -82,6 +94,7 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
+      chunksSortMode: 'none',
     }),
   ],
   performance: {

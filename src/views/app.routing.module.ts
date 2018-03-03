@@ -5,17 +5,17 @@ import { RouterModule } from '@angular/router'
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      // {
-      //   path: 'dashboard',
-      //   loadChildren: './dashboard/dashboard.module#DashboardModule',
-      // },
+      {
+        path: 'dashboard',
+        loadChildren: './dashboard/dashboard.module#DashboardModule',
+      },
       {
         path: 'login',
         loadChildren: './login/login.module#LoginModule',
       },
       {
         path: '',
-        redirectTo: '/login',
+        redirectTo: '/dashboard',
         pathMatch: 'full',
       },
     ]),
@@ -24,7 +24,7 @@ import { RouterModule } from '@angular/router'
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '/',
+      useValue: ROUTE_BASE,
     },
   ],
 })
