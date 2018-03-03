@@ -45,7 +45,7 @@ export const getTranslations = (
   }, {})
 
 export const mergeTranslations = (
-  translationsOrContext: ITranslations | Context,
+  translationsOrContext: ITranslations | Context<ITranslation>,
 ) =>
   merge(
     translationStore,

@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router'
 
 import {
   TranslateModule,
-  getTranslations,
   mergeTranslations,
 } from 'shared/translate/translate.module'
 import { AppRoutingModule } from './app.routing.module'
@@ -12,9 +11,7 @@ import { AppRoutingModule } from './app.routing.module'
 import { AppComponent } from './app.component'
 
 mergeTranslations(
-  getTranslations(
-    require.context('.', false, /core.([\w-]*[\w]+)\.i18n\.json$/),
-  ),
+  require.context('.', false, /core.([\w-]*[\w]+)\.i18n\.json$/),
 )
 
 @NgModule({
