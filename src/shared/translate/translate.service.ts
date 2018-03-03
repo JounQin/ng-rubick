@@ -1,10 +1,12 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core'
 import { Subject } from 'rxjs/Subject'
 
+export interface ITranslation {
+  [key: string]: string
+}
+
 export interface ITranslations {
-  [locale: string]: {
-    [key: string]: string
-  }
+  [locale: string]: ITranslation
 }
 
 export const Translations = new InjectionToken<ITranslations>('TRANSLATIONS')

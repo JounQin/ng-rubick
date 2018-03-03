@@ -1,10 +1,12 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
 import { intersection, merge } from 'lodash'
 
-import { TranslatePipe } from './translate.pipe'
+import { Context } from 'types'
 
+import { TranslatePipe } from './translate.pipe'
 import {
   DefaultLocale,
+  ITranslation,
   ITranslations,
   Locale,
   TranslateService,
@@ -13,10 +15,12 @@ import {
 
 const LOCALE_KEYS: { [key: string]: string[] } = {}
 
-const translationStore: ITranslations = { z: {} }
+const translationStore: ITranslations = {}
 
-export const getTranslations = (context: any) =>
-  context.keys().reduce((modules: any, key: string) => {
+export const getTranslations = (
+  context: Context<ITranslation>,
+): ITranslations =>
+  context.keys().reduce((modules: ITranslations, key: string) => {
     const module = context(key)
     const lang = key.match(I18N_REGEX)[1]
     const matched = modules[lang] || (modules[lang] = {})
@@ -39,8 +43,6 @@ export const getTranslations = (context: any) =>
 
     return modules
   }, {})
-
-export type Context = () => any
 
 export const mergeTranslations = (
   translationsOrContext: ITranslations | Context,
