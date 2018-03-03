@@ -4,7 +4,7 @@ node_js: stable
 
 env:
   global:
-    - ROUTE_BASE=/ng-rubick
+    - ROUTE_BASE=/ng-rubick/
 
 cache: yarn
 
