@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
-import { intersection, merge } from 'lodash'
+import { merge } from 'lodash'
 
 import { Context } from 'types'
 
@@ -13,34 +13,14 @@ import {
   Translations,
 } from './translate.service'
 
-const LOCALE_KEYS: { [key: string]: string[] } = {}
-
-const translationStore: ITranslations = {}
+const translationStore: ITranslations = Object.create(null)
 
 export const getTranslations = (
   context: Context<ITranslation>,
 ): ITranslations =>
   context.keys().reduce((modules: ITranslations, key: string) => {
-    const module = context(key)
     const lang = key.match(I18N_REGEX)[1]
-    const matched = modules[lang] || (modules[lang] = {})
-
-    if (__DEV__) {
-      const keys = LOCALE_KEYS[lang] || (LOCALE_KEYS[lang] = [])
-      const moduleKeys = Object.keys(module)
-
-      const duplicates = intersection(keys, moduleKeys)
-
-      if (duplicates.length) {
-        // tslint:disable-next-line no-console
-        console.warn('detect duplicate keys:', duplicates)
-      }
-
-      keys.push(...moduleKeys)
-    }
-
-    Object.assign(matched, module)
-
+    Object.assign(modules[lang] || (modules[lang] = {}), context(key))
     return modules
   }, {})
 

@@ -1,0 +1,8 @@
+a([routerLink]="['/console/image/repository']") ImageList
+div
+  button((click)="toggleLocale()") {{ 'toggle_locale' | translate }}
+ol
+  li('*ngFor'="let breadCrumb of breadCrumbs$ | async; first as isFirst; last as isLast")
+    ng-container(*ngIf="isFirst || isLast") {{ 'nav_' + breadCrumb.label | translate }}
+    a(*ngIf="!isFirst && !isLast", [routerLink]="[breadCrumb.url]") {{ 'nav_' + breadCrumb.label | translate }}
+router-outlet

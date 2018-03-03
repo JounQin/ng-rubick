@@ -1,4 +1,9 @@
 {
-  "hello_world": "Hello World!",
+  "alauda": "Alauda",
+  "nav_login": "Login",
+  "nav_dashboard": "Dashboard",
+  "nav_image": "Image",
+  "nav_repository": "Image Repository",
+  "nav_detail": "Detail",
   "toggle_locale": "Toggle Locale"
 }

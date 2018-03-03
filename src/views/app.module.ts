@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
+import { ServicesModule } from 'services/services.module'
 import {
   TranslateModule,
   mergeTranslations,
@@ -10,9 +11,7 @@ import { AppRoutingModule } from './app.routing.module'
 
 import { AppComponent } from './app.component'
 
-mergeTranslations(
-  require.context('.', false, /core.([\w-]*[\w]+)\.i18n\.json$/),
-)
+mergeTranslations(require.context('.', false, I18N_REGEX))
 
 @NgModule({
   imports: [
@@ -23,6 +22,7 @@ mergeTranslations(
       locale: 'zh',
       defaultLocale: 'en',
     }),
+    ServicesModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

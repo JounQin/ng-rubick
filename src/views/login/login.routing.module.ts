@@ -12,6 +12,5 @@ import { LoginComponent } from './login.component'
       },
     ]),
   ],
-  exports: [RouterModule],
 })
 export class LoginRoutingModule {}

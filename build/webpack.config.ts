@@ -38,10 +38,10 @@ const cssLoaders = [
 
 export default {
   entry: {
-    app: ['styles/app.scss', 'zone.js', './src/index.ts'],
+    app: ['styles/app.scss', 'zone.js', 'rx.shims', './src/index.ts'],
   },
   output: {
-    publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : '',
+    publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : ROUTE_BASE,
     path: resolve('dist'),
     filename: `[name].[${__DEV__ ? 'hash' : 'chunkhash'}].js`,
   },

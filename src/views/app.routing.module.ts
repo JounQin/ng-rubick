@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router'
   imports: [
     RouterModule.forRoot([
       {
-        path: 'dashboard',
-        loadChildren: './dashboard/dashboard.module#DashboardModule',
+        path: 'console',
+        loadChildren: './console/console.module#ConsoleModule',
       },
       {
         path: 'login',
@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router'
       },
       {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/console',
         pathMatch: 'full',
       },
     ]),
