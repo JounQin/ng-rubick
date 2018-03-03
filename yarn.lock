@@ -2,52 +2,52 @@
 # yarn lockfile v1
 
 
-"@angular/common@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.7.tgz#11bb9f00afe91af8d772ecdff83c2e179f9a67a0"
+"@angular/common@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.0.0-beta.6.tgz#fc13994b9b1315b310d806a82267099c065c3ed2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.7.tgz#3bad9d5e4c25ebc51e1bb67b71b26a97d6d3bbc5"
+"@angular/compiler-cli@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-6.0.0-beta.6.tgz#16df2892af38f72449a1d011f59398602bb115f4"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
     tsickle "^0.27.2"
 
-"@angular/compiler@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.2.7.tgz#31dcc7ac18cc23cb115e76c541b982737ff93ec9"
+"@angular/compiler@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-6.0.0-beta.6.tgz#d0603d09393404f4bcf93f829be2487dadd82b4a"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.7.tgz#e5607fc39d90f9fe4fbaaeeeb6cdb9371966bfe3"
+"@angular/core@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.0.0-beta.6.tgz#80107291012e817a4ed5f75e3a5baeaf67c96519"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/language-service@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.7.tgz#065fc0d3f8d58b3439e1bafc10c85420e4391756"
+"@angular/language-service@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.0.0-beta.6.tgz#a3334d3c9e2ac3b9c57234b925a96f3d01340ee1"
 
-"@angular/platform-browser-dynamic@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.7.tgz#91f903c1f73de2fba1004bc31ed1c3117c7f0406"
+"@angular/platform-browser-dynamic@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.0-beta.6.tgz#4bce23007101bde28071b461be0c87862e7a5c0c"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.7.tgz#cfd86040c25380aabf0322ef47aecc61f23cc532"
+"@angular/platform-browser@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-6.0.0-beta.6.tgz#7d6cbe1f949aa70cfd956c55cb42877f3eacf5a7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/router@^5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-5.2.7.tgz#691c375fe32f01bea56d169469ad8f254b136af9"
+"@angular/router@^6.0.0-beta.6":
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.0.0-beta.6.tgz#9b7c28f3f8a6339f54fb8667e096b003e0a10eb4"
   dependencies:
     tslib "^1.7.1"
 
@@ -65,16 +65,12 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@ngtools/webpack@JounQin/modules#@ngtools/webpack":
-  version "1.10.1"
-  resolved "https://codeload.github.com/JounQin/modules/tar.gz/d0cafe2f85e3264cdee9c77829f0b625e9fcbac4"
+"@ngtools/webpack@^6.0.0-beta.4":
+  version "6.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-6.0.0-beta.4.tgz#0240cc45c9419ce9878b0b6ccb39da87738dae4a"
   dependencies:
     chalk "~2.2.0"
-    enhanced-resolve "^3.1.0"
-    loader-utils "^1.0.2"
-    magic-string "^0.22.3"
     semver "^5.3.0"
-    source-map "^0.5.6"
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
@@ -2419,15 +2415,6 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^3.1.0:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-3.4.1.tgz#0421e339fd71419b3da13d129b3979040230476e"
-  dependencies:
-    graceful-fs "^4.1.2"
-    memory-fs "^0.4.0"
-    object-assign "^4.0.1"
-    tapable "^0.2.7"
-
 enhanced-resolve@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.0.0.tgz#e34a6eaa790f62fccd71d93959f56b2b432db10a"
@@ -4534,12 +4521,6 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
 macaddress@^0.2.8:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
-
-magic-string@^0.22.3:
-  version "0.22.4"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.22.4.tgz#31039b4e40366395618c1d6cf8193c53917475ff"
-  dependencies:
-    vlq "^0.2.1"
 
 make-dir@^1.0.0:
   version "1.2.0"
@@ -6953,10 +6934,6 @@ symbol-tree@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
 
-tapable@^0.2.7:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
-
 tapable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.0.0.tgz#cbb639d9002eed9c6b5975eb20598d7936f1f9f2"
@@ -7452,10 +7429,6 @@ vinyl@^2.0.1:
     cloneable-readable "^1.0.0"
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
-
-vlq@^0.2.1:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
 
 vm-browserify@0.0.4:
   version "0.0.4"

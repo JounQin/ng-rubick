@@ -38,12 +38,11 @@
     ]
   },
   "dependencies": {
-    "@angular/common": "^5.2.7",
-    "@angular/compiler": "^5.2.7",
-    "@angular/core": "^5.2.7",
-    "@angular/platform-browser": "^5.2.7",
-    "@angular/platform-browser-dynamic": "^5.2.7",
-    "@angular/router": "^5.2.7",
+    "@angular/common": "^6.0.0-beta.6",
+    "@angular/core": "^6.0.0-beta.6",
+    "@angular/platform-browser": "^6.0.0-beta.6",
+    "@angular/platform-browser-dynamic": "^6.0.0-beta.6",
+    "@angular/router": "^6.0.0-beta.6",
     "debug": "^3.1.0",
     "env-cmd": "^7.0.0",
     "koa": "^2.5.0",
@@ -57,9 +56,10 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^5.2.7",
-    "@angular/language-service": "^5.2.7",
-    "@ngtools/webpack": "JounQin/modules#@ngtools/webpack",
+    "@angular/compiler": "^6.0.0-beta.6",
+    "@angular/compiler-cli": "^6.0.0-beta.6",
+    "@angular/language-service": "^6.0.0-beta.6",
+    "@ngtools/webpack": "^6.0.0-beta.4",
     "@types/debug": "^0.0.30",
     "@types/extract-text-webpack-plugin": "^3.0.1",
     "@types/html-webpack-plugin": "^2.30.2",

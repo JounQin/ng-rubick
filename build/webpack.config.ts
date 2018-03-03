@@ -87,6 +87,9 @@ export default {
       tsConfigPath: resolve('tsconfig.json'),
       entryModule: resolve('src/views/app.module#AppModule'),
       sourceMap: true,
+      compilerOptions: {
+        disableTypeScriptVersionCheck: true,
+      },
     }),
     new ExtractTextWebpackPlugin({
       filename: 'app.[contenthash].js',
