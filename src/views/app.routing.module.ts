@@ -4,21 +4,26 @@ import { RouterModule } from '@angular/router'
 
 @NgModule({
   imports: [
-    RouterModule.forRoot([
+    RouterModule.forRoot(
+      [
+        {
+          path: 'console',
+          loadChildren: './console/console.module#ConsoleModule',
+        },
+        {
+          path: 'login',
+          loadChildren: './login/login.module#LoginModule',
+        },
+        {
+          path: '',
+          redirectTo: '/console',
+          pathMatch: 'full',
+        },
+      ],
       {
-        path: 'console',
-        loadChildren: './console/console.module#ConsoleModule',
+        useHash: HASH_MODE,
       },
-      {
-        path: 'login',
-        loadChildren: './login/login.module#LoginModule',
-      },
-      {
-        path: '',
-        redirectTo: '/console',
-        pathMatch: 'full',
-      },
-    ]),
+    ),
   ],
   exports: [RouterModule],
   providers: [

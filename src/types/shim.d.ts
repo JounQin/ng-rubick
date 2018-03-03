@@ -24,5 +24,6 @@ declare global {
   const __DEV__: boolean
 
   const I18N_REGEX: RegExp
+  const HASH_MODE: boolean
   const ROUTE_BASE: string
 }

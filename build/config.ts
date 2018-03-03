@@ -11,4 +11,5 @@ export const serverPort = +process.env.PORT || 4000
 export const resolve = (...args: string[]) =>
   path.resolve(process.cwd(), ...args)
 
+export const HASH_MODE = process.env.HASH_MODE === 'true'
 export const ROUTE_BASE = process.env.ROUTE_BASE || '/'

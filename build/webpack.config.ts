@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
 import {
+  HASH_MODE,
   NODE_ENV,
   ROUTE_BASE,
   __DEV__,
@@ -81,6 +82,7 @@ export default {
     new webpack.DefinePlugin({
       __DEV__,
       I18N_REGEX: /([\w-]*[\w]+)\.i18n\.json$/.toString(),
+      HASH_MODE,
       ROUTE_BASE: JSON.stringify(ROUTE_BASE),
     }),
     new AngularCompilerPlugin({
