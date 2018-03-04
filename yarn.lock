@@ -5800,9 +5800,9 @@ pug-filters@^2.1.5:
     resolve "^1.1.6"
     uglify-js "^2.6.1"
 
-pug-html-loader@willyelm/pug-html-loader:
+pug-html-loader@^1.1.5:
   version "1.1.5"
-  resolved "https://codeload.github.com/willyelm/pug-html-loader/tar.gz/8f1afad513457a37d329f66ed36245ba5a757160"
+  resolved "https://registry.yarnpkg.com/pug-html-loader/-/pug-html-loader-1.1.5.tgz#b46855a7790a306e43ec5db297dbdbb7995f4b5a"
   dependencies:
     loader-utils "^0.2.17"
     pug "^2.0.0-rc.2"

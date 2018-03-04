@@ -39,7 +39,7 @@ const cssLoaders = [
 
 export default {
   entry: {
-    app: ['styles/app.scss', 'zone.js', 'rx.shims', './src/index.ts'],
+    app: ['styles/app.scss', 'zone.js', 'rx.shims', './src'],
   },
   output: {
     publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : ROUTE_BASE,
