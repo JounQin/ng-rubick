@@ -19,6 +19,15 @@ import { LandingComponent } from './landing.component'
             path: 'login',
             loadChildren: './login/login.module#LoginModule',
           },
+          {
+            path: 'register',
+            loadChildren: './register/register.module#RegisterModule',
+          },
+          {
+            path: 'forget-password',
+            loadChildren:
+              './forget-password/forget-password.module#ForgetPasswordModule',
+          },
         ],
       },
     ]),

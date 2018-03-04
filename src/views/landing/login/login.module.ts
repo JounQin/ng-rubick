@@ -6,7 +6,7 @@ import { LoginRoutingModule } from './login.routing.module'
 
 import { LoginComponent } from './login.component'
 
-mergeTranslations(require.context('.', true, I18N_REGEX))
+mergeTranslations(require.context('.', false, I18N_REGEX))
 
 @NgModule({
   imports: [SharedModule, LoginRoutingModule],

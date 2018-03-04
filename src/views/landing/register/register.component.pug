@@ -1,0 +1,5 @@
+form.wider((submit)="register($event)")
+  div {{ 'enterprise_registration' | translate }}
+  button.btn-block(rbBtn="primary", type="submit") {{ 'register' | translate }}
+.tips.text-center
+  a(routerLink="/landing/login", [replaceUrl]="true") {{ 'login_tips' | translate }}

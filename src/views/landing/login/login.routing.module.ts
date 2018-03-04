@@ -9,6 +9,7 @@ import { LoginComponent } from './login.component'
       {
         path: '',
         component: LoginComponent,
+        pathMatch: 'full',
         data: {
           breadCrumb: 'user_login',
         },
@@ -16,6 +17,7 @@ import { LoginComponent } from './login.component'
       {
         path: 'account',
         component: LoginComponent,
+        pathMatch: 'full',
         data: {
           breadCrumb: 'account_login',
         },

@@ -6,7 +6,6 @@
   "user_login": "User Login",
   "account_login": "Account Login",
   "register": "Register",
-  "forget_password": "Forget Password",
   "register_tips": "Need an account? Register now",
   "provided_credentials_not_correct": "username/email or password is incorrect"
 }

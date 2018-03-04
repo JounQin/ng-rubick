@@ -5,6 +5,7 @@ import {
   NavigationEnd,
   Router,
 } from '@angular/router'
+import { snakeCase } from 'lodash'
 import { Observable } from 'rxjs/Observable'
 
 import { TranslateService } from 'core/translate/translate.service'
@@ -61,6 +62,7 @@ export class BreadCrumbService {
   }
 
   getBreadCrumbLabel(label: string) {
+    label = snakeCase(label)
     const navLabel = 'nav_' + label
     const translated = this.translate.get(navLabel, null, true)
     return navLabel === translated ? this.translate.get(label) : translated
