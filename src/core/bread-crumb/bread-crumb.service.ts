@@ -7,6 +7,8 @@ import {
 } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 
+import { TranslateService } from 'core/translate/translate.service'
+
 export interface BreadCrumb {
   label: string
   url: string
@@ -16,7 +18,11 @@ export interface BreadCrumb {
 export class BreadCrumbService {
   breadCrumbs$: Observable<BreadCrumb[]>
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private translate: TranslateService,
+  ) {
     this.breadCrumbs$ = this.router.events
       .filter(event => event instanceof NavigationEnd)
       .distinctUntilChanged()
@@ -30,12 +36,19 @@ export class BreadCrumbService {
   ): BreadCrumb[] {
     const { firstChild, routeConfig, url } = route
 
-    const path = routeConfig && routeConfig.path
+    let path
+    let breadCrumb
 
-    if (path && path !== 'console') {
+    if (routeConfig) {
+      path = routeConfig.path
+      const data = routeConfig.data
+      breadCrumb = data && data.breadCrumb
+    }
+
+    if (breadCrumb || (path && path !== 'console')) {
       prefix = [prefix].concat(url.map(({ path: p }) => p)).join('/')
       breadCrumbs.push({
-        label: path.replace(/\/\:(\w+-?)*\w+/g, ''),
+        label: breadCrumb || path.replace(/\/\:(\w+-?)*\w+/g, ''),
         url: prefix,
       })
     }
@@ -45,5 +58,11 @@ export class BreadCrumbService {
     }
 
     return breadCrumbs
+  }
+
+  getBreadCrumbLabel(label: string) {
+    const navLabel = 'nav_' + label
+    const translated = this.translate.get(navLabel, null, true)
+    return navLabel === translated ? this.translate.get(label) : translated
   }
 }

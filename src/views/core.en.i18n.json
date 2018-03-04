@@ -1,9 +1,13 @@
 {
+  "locale": "English",
+  "switch_lang_tips": "点击切换至中文版",
   "alauda": "Alauda",
-  "nav_login": "Login",
+  "nav_landing": null,
+  "nav_login": null,
   "nav_dashboard": "Dashboard",
   "nav_image": "Image",
   "nav_repository": "Image Repository",
   "nav_detail": "Detail",
-  "toggle_locale": "切换语言"
+  "toggle_locale": "切换语言",
+  "question_mark": "?"
 }

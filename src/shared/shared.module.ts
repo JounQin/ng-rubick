@@ -3,13 +3,27 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 import {
+  BreadCrumbModule,
   TranslateModule,
   mergeTranslations,
-} from './translate/translate.module'
+} from 'core/core.module'
+import { DirectivesModule } from './directives/directives.module'
+
+const SharedModules = [DirectivesModule]
 
 @NgModule({
-  imports: [TranslateModule.forChild()],
-  exports: [CommonModule, RouterModule, TranslateModule],
+  imports: [
+    BreadCrumbModule.forChild(),
+    TranslateModule.forChild(),
+    ...SharedModules,
+  ],
+  exports: [
+    CommonModule,
+    RouterModule,
+    BreadCrumbModule,
+    TranslateModule,
+    ...SharedModules,
+  ],
 })
 export class SharedModule {}
 

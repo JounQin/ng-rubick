@@ -9,6 +9,16 @@ import { LoginComponent } from './login.component'
       {
         path: '',
         component: LoginComponent,
+        data: {
+          breadCrumb: 'user_login',
+        },
+      },
+      {
+        path: 'account',
+        component: LoginComponent,
+        data: {
+          breadCrumb: 'account_login',
+        },
       },
     ]),
   ],

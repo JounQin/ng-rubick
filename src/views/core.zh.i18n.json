@@ -1,9 +1,12 @@
 {
+  "locale": "中文",
+  "switch_lang_tips": "Click to switch to English",
   "alauda": "灵雀云",
-  "nav_login": "登录",
+  "nav_login": null,
   "nav_dashboard": "概览",
   "nav_image": "镜像",
   "nav_repository": "镜像仓库",
   "nav_detail": "详情",
-  "toggle_locale": "Toggle Locale"
+  "toggle_locale": "Toggle Locale",
+  "question_mark": "？"
 }

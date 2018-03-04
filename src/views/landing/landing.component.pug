@@ -1,0 +1,8 @@
+.locale((click)="toggleLocale()")
+    i.fa.fa-globe
+    | {{ 'locale' | translate }}
+header
+  a(routerLink="/")
+    img(src="/logo-large.svg")
+main
+  router-outlet

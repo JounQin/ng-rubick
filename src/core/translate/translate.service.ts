@@ -73,7 +73,7 @@ export class TranslateService {
         getValue(params, $0.trim()),
       )
 
-    return value == null ? key : value
+    return value === undefined ? key : value
   }
 
   getLocale() {

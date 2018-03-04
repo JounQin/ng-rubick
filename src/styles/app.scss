@@ -1,1 +1,77 @@
 @import '~normalize.css';
+
+body {
+  background-color: $bg-color;
+}
+
+a {
+  &,
+  &:active,
+  &:hover,
+  &:visited {
+    color: $link-clor;
+    text-decoration: none;
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.btn {
+  position: relative;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid;
+  border-radius: 3px;
+  outline: 0;
+
+  &.btn-xs {
+    padding: 3px 5px;
+  }
+
+  &.btn-primary {
+    color: $reverse-color;
+    border-color: $primary-color;
+    background-color: $primary-color;
+
+    &.disabled,
+    &[disabled] {
+      border-color: $primary-disabled-color;
+      background-color: $primary-disabled-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  + .btn {
+    margin-left: 5px;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}

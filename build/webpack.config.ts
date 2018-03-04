@@ -35,6 +35,12 @@ const cssLoaders = [
       sourceMap,
     },
   },
+  {
+    loader: 'sass-resources-loader',
+    options: {
+      resources: resolve('src/styles/_variables.scss'),
+    },
+  },
 ]
 
 export default {
@@ -59,6 +65,9 @@ export default {
       {
         test: /\.html$/,
         loader: 'html-loader',
+        options: {
+          root: resolve('src/assets'),
+        },
       },
       {
         test: /\.pug$/,
@@ -79,6 +88,13 @@ export default {
       {
         test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
         loader: '@ngtools/webpack',
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8 * 1024,
+        },
       },
     ],
   },
@@ -102,6 +118,7 @@ export default {
       disable: true,
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/assets/favicon.ico',
       template: 'src/index.pug',
       chunksSortMode: 'none',
     }),

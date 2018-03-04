@@ -1,0 +1,7 @@
+form((submit)="login($event)")
+  div {{ (isAccount ? 'account_login' : 'user_login') | translate }}
+  button.btn-block(rbBtn="primary", type="submit") {{ 'login' | translate }}
+  a([routerLink]="'/landing/login' + (isAccount ? '' : '/account')") {{ (isAccount ? 'user_login' : 'account_login') | translate }} »
+  a.pull-right([routerLink]="'/forget-password'") {{ ('forget_password' | translate) + ('question_mark' | translate) }}
+.tips.text-center
+  a(routerLink="/landing/register") {{ 'register_tips' | translate }}

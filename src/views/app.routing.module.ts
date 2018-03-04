@@ -7,17 +7,17 @@ import { RouterModule } from '@angular/router'
     RouterModule.forRoot(
       [
         {
+          path: '',
+          redirectTo: '/console',
+          pathMatch: 'full',
+        },
+        {
           path: 'console',
           loadChildren: './console/console.module#ConsoleModule',
         },
         {
-          path: 'login',
-          loadChildren: './login/login.module#LoginModule',
-        },
-        {
-          path: '',
-          redirectTo: '/console',
-          pathMatch: 'full',
+          path: 'landing',
+          loadChildren: './landing/landing.module#LandingModule',
         },
       ],
       {

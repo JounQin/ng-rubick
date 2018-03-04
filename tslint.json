@@ -1,6 +1,9 @@
 {
   "extends": ["tslint:recommended", "tslint-angular", "tslint-config-prettier", "tslint-plugin-prettier"],
   "rules": {
+    "angular-whitespace": [true, "check-interpolation", "check-pipe", "check-semicolon"],
+    "component-selector": [true, "element", "rb", "kebab-case"],
+    "directive-selector": [true, "attribute", "rb", "camelCase"],
     "interface-name": false,
     "max-classes-per-file": false,
     "member-access": false,
@@ -14,6 +17,8 @@
         "named-imports-order": "lowercase-last"
       }
     ],
+    "pipe-impure": true,
+    "pipe-naming": [true, "camelCase", "rb"],
     "prettier": true
   },
   "linterOptions": {

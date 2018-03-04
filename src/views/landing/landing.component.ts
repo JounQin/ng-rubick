@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'
 
-import { TranslateService } from 'shared/translate/translate.service'
+import { TranslateService } from 'core/translate/translate.service'
 
 @Component({
-  templateUrl: './login.component.html',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss'],
 })
-export class LoginComponent {
+export class LandingComponent {
   constructor(private translate: TranslateService) {}
 
   toggleLocale() {

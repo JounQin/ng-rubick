@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 
-import { BreadCrumbService } from 'services/bread-crumb.service'
-import { TranslateService } from 'shared/translate/translate.service'
+import { BreadCrumbService } from 'core/bread-crumb/bread-crumb.service'
+import { TranslateService } from 'core/translate/translate.service'
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: '#app',
   template: '<router-outlet></router-outlet>',
 })
@@ -23,7 +24,8 @@ export class AppComponent implements OnInit {
           this.translate.get('alauda') +
           ' | ' +
           breadCrumbs
-            .map(({ label }) => this.translate.get('nav_' + label))
+            .map(({ label }) => this.breadCrumb.getBreadCrumbLabel(label))
+            .filter(_ => _)
             .join(' - ')
       })
   }

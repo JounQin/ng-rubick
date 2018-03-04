@@ -1,25 +1,12 @@
-import { Component, OnInit } from '@angular/core'
-import { Observable } from 'rxjs/Observable'
+import { Component } from '@angular/core'
 
-import { BreadCrumb, BreadCrumbService } from 'services/bread-crumb.service'
-import { TranslateService } from 'shared/translate/translate.service'
+import { TranslateService } from 'core/translate/translate.service'
 
 @Component({
   templateUrl: './console.component.html',
 })
-export class ConsoleComponent implements OnInit {
-  breadCrumbs$: Observable<BreadCrumb[]>
-
-  constructor(
-    private breadCrumb: BreadCrumbService,
-    private translate: TranslateService,
-  ) {}
-
-  ngOnInit() {
-    this.breadCrumbs$ = this.breadCrumb.breadCrumbs$.startWith(
-      this.breadCrumb.getBreadCrumbs(),
-    )
-  }
+export class ConsoleComponent {
+  constructor(private translate: TranslateService) {}
 
   toggleLocale() {
     this.translate.setLocale(this.translate.getLocale() === 'en' ? 'zh' : 'en')

@@ -1,0 +1,12 @@
+{
+  "account": "账号",
+  "username": "用户名",
+  "password": "密码",
+  "login": "登录",
+  "user_login": "用户登录",
+  "account_login": "账号登录",
+  "register": "注册",
+  "forget_password": "忘记密码",
+  "register_tips": "没有账号？现在注册",
+  "provided_credentials_not_correct": "用户名/邮箱或密码不正确"
+}
