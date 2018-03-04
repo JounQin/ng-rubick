@@ -57,6 +57,10 @@ export default {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
+      {
         test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader'],
       },

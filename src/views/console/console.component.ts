@@ -5,7 +5,7 @@ import { BreadCrumb, BreadCrumbService } from 'services/bread-crumb.service'
 import { TranslateService } from 'shared/translate/translate.service'
 
 @Component({
-  templateUrl: './console.component.pug',
+  templateUrl: './console.component.html',
 })
 export class ConsoleComponent implements OnInit {
   breadCrumbs$: Observable<BreadCrumb[]>

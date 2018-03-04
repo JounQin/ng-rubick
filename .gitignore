@@ -3,4 +3,5 @@
 dist
 sync
 node_modules
+*.html
 *.log
