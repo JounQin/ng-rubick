@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core'
 import { ServicesModule } from 'core/services/services.module'
 
+import { Locale } from 'utils'
+
 import { BreadCrumbModule } from './bread-crumb/bread-crumb.module'
 import {
   TranslateModule,
@@ -11,8 +13,7 @@ import {
   imports: [
     BreadCrumbModule.forRoot(),
     TranslateModule.forRoot({
-      locale: 'zh',
-      defaultLocale: 'en',
+      defaultLocale: Locale.EN,
     }),
     ServicesModule,
   ],

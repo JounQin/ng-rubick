@@ -15,8 +15,8 @@ export const DefaultLocale = new InjectionToken<string>('DEFAULT_LOCALE')
 
 @Injectable()
 export class TranslateService {
-  locale$ = new Subject()
-  defaultLocale$ = new Subject()
+  locale$ = new Subject<string>()
+  defaultLocale$ = new Subject<string>()
 
   constructor(
     @Inject(Translations) private translations: ITranslations,

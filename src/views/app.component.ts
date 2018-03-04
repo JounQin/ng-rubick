@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
+import { LANG, LOCALE_COOKIE, getLang, setCookie } from 'utils'
+
 import { BreadCrumbService } from 'core/bread-crumb/bread-crumb.service'
 import { TranslateService } from 'core/translate/translate.service'
 
@@ -15,10 +17,17 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const { locale$ } = this.translate
+
+    locale$.subscribe(locale => {
+      setCookie(LOCALE_COOKIE, locale, Infinity)
+      document.documentElement.setAttribute(LANG, locale)
+    })
+
+    this.translate.setLocale(getLang())
+
     this.breadCrumb.breadCrumbs$
-      .combineLatest(
-        this.translate.locale$.startWith(this.translate.getLocale()),
-      )
+      .combineLatest(locale$)
       .subscribe(([breadCrumbs]) => {
         document.title =
           this.translate.get('alauda') +

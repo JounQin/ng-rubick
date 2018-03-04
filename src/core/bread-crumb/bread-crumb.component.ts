@@ -20,9 +20,7 @@ export class BreadCrumbComponent implements OnInit {
   ngOnInit() {
     this.breadCrumbs$ = this.breadCrumb.breadCrumbs$
       .startWith(this.breadCrumb.getBreadCrumbs())
-      .combineLatest(
-        this.translate.locale$.startWith(this.translate.getLocale()),
-      )
+      .combineLatest(this.translate.locale$.startWith(null))
       .map(([breadCrumbs]) =>
         breadCrumbs.map(breadCrumb => ({
           ...breadCrumb,
