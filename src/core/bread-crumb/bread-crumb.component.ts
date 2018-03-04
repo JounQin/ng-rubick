@@ -22,7 +22,7 @@ export class BreadCrumbComponent implements OnInit {
       .startWith(this.breadCrumb.getBreadCrumbs())
       .combineLatest(this.translate.locale$.startWith(null))
       .map(([breadCrumbs]) =>
-        breadCrumbs.map(breadCrumb => ({
+        breadCrumbs.slice(1).map(breadCrumb => ({
           ...breadCrumb,
           label: this.breadCrumb.getBreadCrumbLabel(breadCrumb.label),
         })),

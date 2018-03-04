@@ -21,14 +21,7 @@ interface CookieOptions {
   secure?: boolean
 }
 
-function setCookie({
-  name,
-  value,
-  end,
-  path,
-  domain,
-  secure,
-}: CookieOptions): boolean
+function setCookie(options: CookieOptions): boolean
 function setCookie(
   name: string,
   value: string,

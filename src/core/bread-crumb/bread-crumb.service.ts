@@ -32,12 +32,12 @@ export class BreadCrumbService {
   getBreadCrumbs(
     route: ActivatedRouteSnapshot = this.route.snapshot,
     breadCrumbs: BreadCrumb[] = [],
-    prefix = '/console',
+    prefix = '',
   ): BreadCrumb[] {
     const { firstChild, routeConfig, url } = route
 
-    let path
-    let breadCrumb
+    let path: string
+    let breadCrumb: string
 
     if (routeConfig) {
       path = routeConfig.path
@@ -45,8 +45,8 @@ export class BreadCrumbService {
       breadCrumb = data && data.breadCrumb
     }
 
-    if (breadCrumb || (path && path !== 'console')) {
-      prefix = [prefix].concat(url.map(({ path: p }) => p)).join('/')
+    if (breadCrumb || path) {
+      prefix = [prefix, ...url.map(({ path: p }) => p)].join('/')
       breadCrumbs.push({
         label: breadCrumb || path.replace(/\/\:(\w+-?)*\w+/g, ''),
         url: prefix,

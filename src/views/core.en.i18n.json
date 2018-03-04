@@ -4,6 +4,7 @@
   "alauda": "Alauda",
   "nav_landing": null,
   "nav_login": null,
+  "nav_console": null,
   "nav_dashboard": "Dashboard",
   "nav_image": "Image",
   "nav_repository": "Image Repository",

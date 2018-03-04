@@ -24,8 +24,6 @@ export class AppComponent implements OnInit {
       document.documentElement.setAttribute(LANG, locale)
     })
 
-    this.translate.setLocale(getLang())
-
     this.breadCrumb.breadCrumbs$
       .combineLatest(locale$)
       .subscribe(([breadCrumbs]) => {
@@ -37,5 +35,7 @@ export class AppComponent implements OnInit {
             .filter(_ => _)
             .join(' - ')
       })
+
+    this.translate.setLocale(getLang())
   }
 }
