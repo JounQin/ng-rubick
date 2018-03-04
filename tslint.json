@@ -4,6 +4,7 @@
     "interface-name": false,
     "max-classes-per-file": false,
     "member-access": false,
+    "no-console": [true, "log"],
     "no-empty": [true, "allow-empty-catch"],
     "no-unused-expression": true,
     "no-unused-variable": true,

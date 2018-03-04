@@ -90,7 +90,7 @@ export default {
       ROUTE_BASE: JSON.stringify(ROUTE_BASE),
     }),
     new AngularCompilerPlugin({
-      tsConfigPath: resolve('tsconfig.json'),
+      tsConfigPath: resolve('tsconfig.aot.json'),
       entryModule: resolve('src/views/app.module#AppModule'),
       sourceMap: true,
       compilerOptions: {

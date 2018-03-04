@@ -48,14 +48,12 @@ export class TranslateService {
 
   get(key: string, params?: any, ignoreNonExist?: boolean) {
     const { defaultLocale, getValue, locale, translations } = this
-    const translation = translations[locale]
 
-    let value = getValue(translation, key)
+    let value = getValue(translations[locale], key)
 
     if (value === undefined) {
       if (defaultLocale && defaultLocale !== locale) {
-        const defaultTranslation = translations[defaultLocale]
-        value = getValue(defaultTranslation, key)
+        value = getValue(translations[defaultLocale], key)
       }
 
       if (
