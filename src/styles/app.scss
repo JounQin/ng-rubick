@@ -1,7 +1,26 @@
 @import '~normalize.css';
+@import '~font-awesome/css/font-awesome.css';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 body {
-  background-color: $bg-color;
+  font-size: 14px;
+  overflow-y: auto;
+  line-height: (20/14);
 }
 
 a {
@@ -17,12 +36,9 @@ a {
 ol,
 ul {
   list-style: none;
+  margin-top: 0;
+  margin-bottom: 10px;
   padding-left: 0;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 #app {
@@ -68,10 +84,31 @@ body {
   }
 }
 
+.d-flex {
+  display: flex;
+}
+
+.flex {
+  flex: 1;
+  max-height: 100%;
+}
+
+.pull-left {
+  float: left !important;
+}
+
 .pull-right {
-  float: right;
+  float: right !important;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

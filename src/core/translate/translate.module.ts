@@ -9,6 +9,7 @@ import {
   ITranslation,
   ITranslations,
   Locale,
+  Locales,
   TranslateService,
   Translations,
 } from './translate.service'
@@ -39,6 +40,7 @@ export const translationsFactory = () => translationStore
 interface TranslateOptions {
   locale?: string
   defaultLocale?: string
+  locales?: string[]
 }
 
 @NgModule({
@@ -61,6 +63,10 @@ export class TranslateModule {
         {
           provide: DefaultLocale,
           useValue: options.defaultLocale,
+        },
+        {
+          provide: Locales,
+          useValue: options.locales,
         },
         TranslateService,
       ],

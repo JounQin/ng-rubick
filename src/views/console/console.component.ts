@@ -1,14 +1,14 @@
 import { Component } from '@angular/core'
 
-import { TranslateService } from 'core/translate/translate.service'
+import NAV_CONFIG from './nav/nav-config'
 
 @Component({
   templateUrl: './console.component.html',
+  styleUrls: ['./console.component.scss'],
 })
 export class ConsoleComponent {
-  constructor(private translate: TranslateService) {}
+  active = true
+  collapsed = false
 
-  toggleLocale() {
-    this.translate.setLocale(this.translate.getLocale() === 'en' ? 'zh' : 'en')
-  }
+  navConfig = NAV_CONFIG
 }

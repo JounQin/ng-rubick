@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core'
 
 import { ButtonDirective } from './button.directive'
 
+const directives = [ButtonDirective]
+
 @NgModule({
-  declarations: [ButtonDirective],
-  exports: [ButtonDirective],
+  declarations: directives,
+  exports: directives,
 })
 export class DirectivesModule {}

@@ -1,0 +1,6 @@
+ol.list-unstyled.categories
+  li(*ngFor="let config of navConfig")
+    .title {{ 'nav_' + config.title | translate }}
+    ol.list-unstyled.items
+      li(*ngFor="let item of config.items")
+        rb-nav-item([item]="item")

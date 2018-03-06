@@ -7,9 +7,5 @@ import { TranslateService } from 'core/translate/translate.service'
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent {
-  constructor(private translate: TranslateService) {}
-
-  toggleLocale() {
-    this.translate.setLocale(this.translate.getLocale() === 'en' ? 'zh' : 'en')
-  }
+  constructor(public translate: TranslateService) {}
 }

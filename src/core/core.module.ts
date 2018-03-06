@@ -14,6 +14,7 @@ import {
     BreadCrumbModule.forRoot(),
     TranslateModule.forRoot({
       defaultLocale: Locale.EN,
+      locales: [Locale.EN, Locale.ZH],
     }),
     ServicesModule,
   ],

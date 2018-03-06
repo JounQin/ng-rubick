@@ -2,10 +2,18 @@
 $bg-color: #f1f1f1;
 $reverse-color: #fff;
 $card-bg-color: $reverse-color;
+$console-panel-bg-color: #35444c;
+$logo-bg-color: #1b95cd;
+$toolbar-bg-color: #24a7e3;
 
-// colors
-$landing-color: #494949;
+// basic colors
+$bread-crumb-color: #a5b0be;
+$console-color: #494949;
+$landing-color: $console-color;
 $link-clor: #4aaee7;
+$nav-focus-color: #3c4b55;
+
+// status-colors
 $link-desc-color: #999;
 $text-desc-color: #888;
 

@@ -90,10 +90,10 @@ export default {
         loader: '@ngtools/webpack',
       },
       {
-        test: /\.svg$/,
+        test: /\.(eot|svg|ttf|woff2?)$/,
         loader: 'url-loader',
         options: {
-          limit: 8 * 1024,
+          limit: 1024 * 8,
         },
       },
     ],

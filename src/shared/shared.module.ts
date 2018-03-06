@@ -8,8 +8,9 @@ import {
   mergeTranslations,
 } from 'core/core.module'
 import { DirectivesModule } from './directives/directives.module'
+import { PipesModule } from './pipes/pipes.module'
 
-const SharedModules = [DirectivesModule]
+const SharedModules = [DirectivesModule, PipesModule]
 
 @NgModule({
   imports: [

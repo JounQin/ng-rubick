@@ -1,5 +1,16 @@
-a([routerLink]="['/console/image/repository']") ImageList
-div
-  button((click)="toggleLocale()") {{ 'toggle_locale' | translate }}
-rb-bread-crumb
-router-outlet
+.left-panel([ngClass]="{ active: active }", (transitionend)="collapsed = !active")
+  header
+    a(routerLink="/")
+      img(src="~assets/logo-medium.svg")
+  nav.flex
+    .d-flex.nav-collapse((click)="active = false")
+      i.fa.fa-caret-left
+    rb-nav-list.scroll-y.nav-list([navConfig]="navConfig")
+  .d-flex.nav-collapse(*ngIf="collapsed", (click)="active = true; collapsed = false")
+    i.fa.fa-caret-right
+.right-panel
+  header
+    .logo([ngClass]="{ active: !active }")
+      img(src="~assets/logo-small.svg")
+  rb-bread-crumb
+  router-outlet

@@ -1,0 +1,23 @@
+ol.categories {
+  padding: 8px;
+
+  &,
+  .sub-items {
+    margin-bottom: 0;
+  }
+
+  > li:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+.title {
+  color: $reverse-color;
+  opacity: 0.5;
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.items {
+  margin: 4px 0;
+}

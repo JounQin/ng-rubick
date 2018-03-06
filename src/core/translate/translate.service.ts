@@ -12,6 +12,7 @@ export interface ITranslations {
 export const Translations = new InjectionToken<ITranslations>('TRANSLATIONS')
 export const Locale = new InjectionToken<string>('LOCALE')
 export const DefaultLocale = new InjectionToken<string>('DEFAULT_LOCALE')
+export const Locales = new InjectionToken<string>('LOCALES')
 
 @Injectable()
 export class TranslateService {
@@ -22,6 +23,7 @@ export class TranslateService {
     @Inject(Translations) private translations: ITranslations,
     @Inject(Locale) private locale: string,
     @Inject(DefaultLocale) private defaultLocale: string,
+    @Inject(Locales) private locales: string[] = [],
   ) {}
 
   private getValue = (input: any, key: string): string => {
@@ -88,5 +90,14 @@ export class TranslateService {
   setDefaultLocale(defaultLocale: string) {
     this.defaultLocale = defaultLocale
     this.defaultLocale$.next(defaultLocale)
+  }
+
+  nextLocale() {
+    const { locale, locales } = this
+    const index = locales.indexOf(locale)
+    if (index === -1) {
+      throw new Error('`locales` not set correctly')
+    }
+    this.setLocale(locales[index === locales.length - 1 ? 0 : index + 1])
   }
 }

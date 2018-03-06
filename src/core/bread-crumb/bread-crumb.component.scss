@@ -1,7 +1,20 @@
-:host > ol {
-  display: flex;
+:host {
+  padding: 10px 20px;
+  background-color: $reverse-color;
 
-  > li {
-    padding: 5px 10px;
+  > ol {
+    margin-bottom: 0;
+
+    > li {
+      display: inline-block;
+
+      > * {
+        padding: 0 5px;
+      }
+
+      > span {
+        color: $bread-crumb-color;
+      }
+    }
   }
 }

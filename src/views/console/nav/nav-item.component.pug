@@ -1,0 +1,18 @@
+.item([ngClass]="{ active: active$ | async, expanded: expanded }")
+  div(*ngIf="item.items", (click)="expanded = !expanded")
+    i.fa([ngClass]="'fa-' + item.icon")
+    span {{ 'nav_' + (item.text | snakeCase) | translate }}
+    i.fa([ngClass]="'fa-' + (expanded ? 'minus': 'plus')")
+  div(*ngIf!="!item.items && item.text === 'locale'", (click)="translate.nextLocale()")
+    i.fa([ngClass]="'fa-' + item.icon")
+    span {{ 'nav_locale' | translate }}
+  a(*ngIf!="!item.items && item.text !== 'locale'",
+    [routerLink]="prefix + (item.link || item.text)",
+    routerLinkActive="active")
+    i.fa([ngClass]="'fa-' + item.icon")
+    span {{ 'nav_' + (item.text | snakeCase) | translate }}
+  ol.list-unstyled.sub-items(*ngIf="item.items",
+                             [ngStyle]="{ height: expanded ? 32 * item.items.length + 'px' : 0 }")
+    li(*ngFor="let it of item.items")
+      a([routerLink]="prefix + (item.link || item.text) + '/' + (it.link || it.text)",
+        routerLinkActive="active-link") {{ 'nav_' + (it.text | snakeCase) | translate }}
