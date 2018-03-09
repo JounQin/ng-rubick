@@ -28,6 +28,15 @@ export class BreadCrumbService {
       .filter(event => event instanceof NavigationEnd)
       .distinctUntilChanged()
       .map(() => this.getBreadCrumbs())
+      .combineLatest(this.translate.locale$)
+      .map(([breadCrumbs]) =>
+        // do not display first level breadCrumb - landing/console
+        breadCrumbs.slice(1).map(breadCrumb => ({
+          ...breadCrumb,
+          label: this.getBreadCrumbLabel(breadCrumb.label),
+        })),
+      )
+      .shareReplay(1)
   }
 
   getBreadCrumbs(

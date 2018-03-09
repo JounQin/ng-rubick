@@ -17,24 +17,20 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const { locale$ } = this.translate
-
-    locale$.subscribe(locale => {
+    this.translate.locale$.subscribe(locale => {
       setCookie(LOCALE_COOKIE, locale, Infinity)
       document.documentElement.setAttribute(LANG, locale)
     })
 
-    this.breadCrumb.breadCrumbs$
-      .combineLatest(locale$)
-      .subscribe(([breadCrumbs]) => {
-        document.title =
-          this.translate.get('alauda') +
-          ' | ' +
-          breadCrumbs
-            .map(({ label }) => this.breadCrumb.getBreadCrumbLabel(label))
-            .filter(_ => _)
-            .join(' - ')
-      })
+    this.breadCrumb.breadCrumbs$.subscribe(breadCrumbs => {
+      document.title =
+        this.translate.get('alauda') +
+        ' | ' +
+        breadCrumbs
+          .map(({ label }) => label)
+          .filter(_ => _)
+          .join(' - ')
+    })
 
     this.translate.setLocale(getLang())
   }

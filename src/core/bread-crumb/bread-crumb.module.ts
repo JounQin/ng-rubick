@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { ModuleWithProviders, NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { TranslateModule } from 'core/core.module'
+import { TranslateModule } from 'core/translate/translate.module'
 
 import { BreadCrumbComponent } from './bread-crumb.component'
 import { BreadCrumbService } from './bread-crumb.service'
