@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
 import { BreadCrumbModule } from 'core/bread-crumb/bread-crumb.module'
@@ -11,16 +12,19 @@ import {
 import { DirectivesModule } from './directives/directives.module'
 import { PipesModule } from './pipes/pipes.module'
 
+const BuiltInModules = [FormsModule]
 const SharedModules = [DirectivesModule, PipesModule]
 
 @NgModule({
   imports: [
+    ...BuiltInModules,
     BreadCrumbModule.forChild(),
     ModalModule.forRoot(),
     TranslateModule.forChild(),
     ...SharedModules,
   ],
   exports: [
+    ...BuiltInModules,
     CommonModule,
     RouterModule,
     BreadCrumbModule,

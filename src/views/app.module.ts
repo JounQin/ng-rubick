@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
@@ -10,7 +11,13 @@ import { AppComponent } from './app.component'
 mergeTranslations(require.context('.', false, I18N_REGEX))
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, AppRoutingModule, CoreModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule,
+    AppRoutingModule,
+    CoreModule,
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })

@@ -34,7 +34,7 @@
       {
         "files": "*.json",
         "options": {
-          "printWidth": 200
+          "printWidth": 180
         }
       }
     ]
@@ -53,9 +53,7 @@
     "koa-compress": "^2.0.0",
     "koa-logger": "^3.1.0",
     "koa-static-cache": "^5.1.2",
-    "lodash": "^4.17.5",
     "lodash-es": "^4.17.7",
-    "ngx-bootstrap": "^2.0.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"
   },
@@ -86,6 +84,7 @@
     "husky": "^0.14.3",
     "koa-webpack": "^3.0.2",
     "lint-staged": "^7.0.0",
+    "lodash": "^4.17.5",
     "node-sass": "^4.7.2",
     "normalize.css": "^8.0.0",
     "npm-run-all": "^4.1.2",
