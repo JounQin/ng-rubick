@@ -31,9 +31,9 @@ export class BreadCrumbService {
       .combineLatest(this.translate.locale$)
       .map(([breadCrumbs]) =>
         // do not display first level breadCrumb - landing/console
-        breadCrumbs.slice(1).map(breadCrumb => ({
-          ...breadCrumb,
-          label: this.getBreadCrumbLabel(breadCrumb.label),
+        breadCrumbs.slice(1).map(({ label, url }) => ({
+          label: this.getBreadCrumbLabel(label),
+          url,
         })),
       )
       .shareReplay(1)
@@ -70,7 +70,7 @@ export class BreadCrumbService {
     return breadCrumbs
   }
 
-  getBreadCrumbLabel(label: string) {
+  private getBreadCrumbLabel(label: string) {
     label = snakeCase(label)
     const navLabel = 'nav_' + label
     const translated = this.translate.get(navLabel, null, true)
