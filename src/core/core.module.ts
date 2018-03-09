@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core'
-import { ServicesModule } from 'core/services/services.module'
+
+import { ServicesModule } from './services/services.module'
 
 import { Locale } from 'utils'
 
 import { BreadCrumbModule } from './bread-crumb/bread-crumb.module'
+import { ModalModule } from './modal/modal.module'
 import {
   TranslateModule,
   mergeTranslations,
@@ -12,14 +14,15 @@ import {
 @NgModule({
   imports: [
     BreadCrumbModule.forRoot(),
+    ModalModule.forRoot(),
     TranslateModule.forRoot({
       defaultLocale: Locale.EN,
       locales: [Locale.EN, Locale.ZH],
     }),
     ServicesModule,
   ],
-  exports: [BreadCrumbModule, TranslateModule],
+  exports: [BreadCrumbModule, ModalModule, TranslateModule],
 })
 export class CoreModule {}
 
-export { BreadCrumbModule, TranslateModule, mergeTranslations }
+export { mergeTranslations }

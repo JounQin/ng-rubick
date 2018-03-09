@@ -7,10 +7,10 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "scripts": {
-    "watch:pug": "pug src -P -w",
+    "watch:pug": "pug src -P -w --doctype html",
     "watch:server": "env-cmd .env env-cmd --fallback .env.local ts-node server",
     "dev": "run-p watch:*",
-    "build": "rimraf dist && pug src && env-cmd --fallback .env.local env-cmd .env webpack --config build/webpack.config.ts --colors --progress",
+    "build": "rimraf dist && pug src --doctype html && env-cmd --fallback .env.local env-cmd .env webpack --config build/webpack.config.ts --colors --progress",
     "start": "env-cmd --fallback .env.local env-cmd .env ts-node server",
     "lint": "tslint -p . -t stylish '**/*.ts'",
     "precommit": "lint-staged",
@@ -34,7 +34,7 @@
       {
         "files": "*.json",
         "options": {
-          "printWidth": 150
+          "printWidth": 200
         }
       }
     ]
@@ -42,6 +42,7 @@
   "dependencies": {
     "@angular/common": "^6.0.0-beta.7",
     "@angular/core": "^6.0.0-beta.7",
+    "@angular/forms": "^6.0.0-beta.7",
     "@angular/platform-browser": "^6.0.0-beta.7",
     "@angular/platform-browser-dynamic": "^6.0.0-beta.7",
     "@angular/router": "^6.0.0-beta.7",
@@ -54,6 +55,7 @@
     "koa-static-cache": "^5.1.2",
     "lodash": "^4.17.5",
     "lodash-es": "^4.17.7",
+    "ngx-bootstrap": "^2.0.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"
   },

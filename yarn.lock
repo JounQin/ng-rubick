@@ -29,6 +29,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/forms@^6.0.0-beta.7":
+  version "6.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.0.0-beta.7.tgz#9524e0469a962484cb19867d34e45a43eef987cf"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/language-service@^6.0.0-beta.7":
   version "6.0.0-beta.7"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.0.0-beta.7.tgz#04a10c16884c1e53f8c5d221aad7085c19966684"
@@ -4892,6 +4898,10 @@ negotiator@0.6.1:
 neo-async@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
+
+ngx-bootstrap@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.2.tgz#6862b2ee4764bb6cfd34c66528873d0d050c2faa"
 
 nice-try@^1.0.4:
   version "1.0.4"
