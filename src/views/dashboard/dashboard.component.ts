@@ -13,6 +13,7 @@ export class DashboardComponent {
 
   showModal() {
     const modalRef = this.modal.open(MyModalComponent, {
+      title: 'Dashboard Modal Header',
       inputs: {
         msg: 'Dashboard Modal!',
       },
@@ -20,6 +21,6 @@ export class DashboardComponent {
 
     setTimeout(() => {
       modalRef.destroy()
-    }, 2000)
+    }, 5000)
   }
 }

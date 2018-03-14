@@ -13,6 +13,7 @@ import {
 })
 export class ModalComponent {
   @Input() componentRef: ComponentRef<any>
+  @Input() title: string
 
   @ViewChild('body', {
     read: ViewContainerRef,

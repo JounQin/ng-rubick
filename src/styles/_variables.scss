@@ -20,3 +20,44 @@ $text-desc-color: #888;
 $primary-color: #24a7e3;
 $primary-light-color: #d7eef9;
 $primary-disabled-color: #97cced;
+
+$white: #fff !default;
+$black: #000 !default;
+
+$border-width: 1px !default;
+
+$line-height-base: 1.5 !default;
+
+// Modals
+
+// Padding applied to the modal body
+$modal-inner-padding: 10px !default;
+
+$modal-dialog-margin: 5px !default;
+$modal-dialog-margin-y-sm-up: 15px !default;
+
+$modal-title-line-height: $line-height-base !default;
+
+$modal-content-bg: $white !default;
+$modal-content-border-color: rgba($black, 0.2) !default;
+$modal-content-border-width: $border-width !default;
+$modal-content-border-radius: 3px;
+$modal-content-box-shadow-xs: 0 3px 5px rgba($black, 0.5) !default;
+$modal-content-box-shadow-sm-up: 0 5px 10px rgba($black, 0.5) !default;
+
+$modal-backdrop-bg: $black !default;
+$modal-backdrop-opacity: 0.5 !default;
+$modal-header-border-color: #e9ecef !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-header-border-width: $modal-content-border-width !default;
+$modal-footer-border-width: $modal-header-border-width !default;
+$modal-header-padding: 1rem !default;
+
+$modal-lg: 800px !default;
+$modal-md: 500px !default;
+$modal-sm: 300px !default;
+
+$modal-transition: transform 0.3s ease-out !default;
+
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;

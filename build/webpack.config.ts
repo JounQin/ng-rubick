@@ -38,7 +38,10 @@ const cssLoaders = [
   {
     loader: 'sass-resources-loader',
     options: {
-      resources: resolve('src/styles/_variables.scss'),
+      resources: [
+        resolve('src/styles/_variables.scss'),
+        resolve('src/styles/_mixins.scss'),
+      ],
     },
   },
 ]
@@ -108,7 +111,7 @@ export default {
     new AngularCompilerPlugin({
       tsConfigPath: resolve('tsconfig.aot.json'),
       entryModule: resolve('src/views/app.module#AppModule'),
-      sourceMap: true,
+      sourceMap,
       compilerOptions: {
         disableTypeScriptVersionCheck: true,
       },
