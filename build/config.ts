@@ -9,6 +9,8 @@ export const NODE_ENV = (process.env.NODE_ENV || DEV) as NodeEnv
 
 export const __DEV__ = NODE_ENV === DEV
 
+export const hashType = __DEV__ ? 'hash' : 'chunkhash'
+
 export const serverHost = process.env.HOST || 'localhost'
 
 export const serverPort = +process.env.PORT || 4000

@@ -1,6 +1,6 @@
 import { AngularCompilerPlugin } from '@ngtools/webpack'
-import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack, { Configuration } from 'webpack'
 
 import {
@@ -8,6 +8,7 @@ import {
   NODE_ENV,
   ROUTE_BASE,
   __DEV__,
+  hashType,
   resolve,
   serverHost,
   serverPort,
@@ -53,7 +54,7 @@ const config: Configuration = {
   output: {
     publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : ROUTE_BASE,
     path: resolve('dist'),
-    filename: `[name].[${__DEV__ ? 'hash' : 'chunkhash'}].js`,
+    filename: `[name].[${hashType}].js`,
   },
   mode: NODE_ENV,
   resolve: {
@@ -83,10 +84,7 @@ const config: Configuration = {
       {
         test: /\.scss$/,
         exclude: /\.component\.scss$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: cssLoaders,
-        }),
+        use: [MiniCssExtractPlugin.loader, ...cssLoaders],
       },
       {
         test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
@@ -116,9 +114,8 @@ const config: Configuration = {
         disableTypeScriptVersionCheck: true,
       },
     }),
-    new ExtractTextWebpackPlugin({
-      filename: 'app.[contenthash].js',
-      disable: true,
+    new MiniCssExtractPlugin({
+      filename: `[name].[${hashType}].css`,
     }),
     new HtmlWebpackPlugin({
       favicon: 'src/assets/favicon.ico',
