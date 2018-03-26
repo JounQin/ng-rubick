@@ -3,7 +3,7 @@ import { Component } from '@angular/core'
 import NAV_CONFIG from './nav/nav-config'
 
 @Component({
-  templateUrl: './console.component.html',
+  templateUrl: './console.component.pug',
   styleUrls: ['./console.component.scss'],
 })
 export class ConsoleComponent {

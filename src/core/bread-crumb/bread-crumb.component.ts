@@ -5,7 +5,7 @@ import { BreadCrumb, BreadCrumbService } from './bread-crumb.service'
 
 @Component({
   selector: 'rb-bread-crumb',
-  templateUrl: './bread-crumb.component.html',
+  templateUrl: './bread-crumb.component.pug',
   styleUrls: ['./bread-crumb.component.scss'],
 })
 export class BreadCrumbComponent implements OnInit {

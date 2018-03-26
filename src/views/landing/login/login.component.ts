@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-  templateUrl: './login.component.html',
+  templateUrl: './login.component.pug',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {

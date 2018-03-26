@@ -9,7 +9,7 @@ import { NavItem } from 'types'
 
 @Component({
   selector: 'rb-nav-item',
-  templateUrl: './nav-item.component.html',
+  templateUrl: './nav-item.component.pug',
   styleUrls: ['./nav-item.component.scss'],
 })
 export class NavItemComponent implements OnInit, OnDestroy {

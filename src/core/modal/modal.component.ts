@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'rb-modal',
-  templateUrl: './modal.component.html',
+  templateUrl: './modal.component.pug',
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {

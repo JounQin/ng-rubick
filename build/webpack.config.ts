@@ -1,7 +1,7 @@
 import { AngularCompilerPlugin } from '@ngtools/webpack'
 import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import webpack from 'webpack'
+import webpack, { Configuration } from 'webpack'
 
 import {
   HASH_MODE,
@@ -46,7 +46,7 @@ const cssLoaders = [
   },
 ]
 
-export default {
+const config: Configuration = {
   entry: {
     app: ['styles/app.scss', 'zone.js', 'rx.shims', './src'],
   },
@@ -74,7 +74,7 @@ export default {
       },
       {
         test: /\.pug$/,
-        use: ['html-loader', 'pug-html-loader'],
+        use: ['html-loader', 'pug-plain-loader'],
       },
       {
         test: /\.component\.scss$/,
@@ -132,10 +132,12 @@ export default {
   optimization: {
     splitChunks: {
       name: 'vendors',
-      chunks: 'all',
+      chunks: 'initial',
     },
     runtimeChunk: {
       name: 'manifest',
     },
   },
-} as webpack.Configuration
+}
+
+export default config

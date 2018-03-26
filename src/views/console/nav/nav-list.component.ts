@@ -4,7 +4,7 @@ import { NavCategory } from 'types'
 
 @Component({
   selector: 'rb-nav-list',
-  templateUrl: './nav-list.component.html',
+  templateUrl: './nav-list.component.pug',
   styleUrls: ['./nav-list.component.scss'],
 })
 export class NavListComponent {
