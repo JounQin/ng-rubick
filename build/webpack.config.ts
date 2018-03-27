@@ -1,6 +1,7 @@
 import { AngularCompilerPlugin } from '@ngtools/webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import UglifyJsWebpackPlugin from 'uglifyjs-webpack-plugin'
 import webpack, { Configuration } from 'webpack'
 
 import {
@@ -20,7 +21,11 @@ const cssLoaders = [
   {
     loader: 'css-loader',
     options: {
-      minimize: !__DEV__,
+      minimize: !__DEV__ && {
+        discardComments: {
+          removeAll: true,
+        },
+      },
       sourceMap,
     },
   },
@@ -127,6 +132,16 @@ const config: Configuration = {
     hints: false,
   },
   optimization: {
+    minimize: !__DEV__,
+    minimizer: [
+      new UglifyJsWebpackPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
     splitChunks: {
       name: 'vendors',
       chunks: 'initial',
