@@ -1,5 +1,5 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core'
-import { Subject } from 'rxjs/Subject'
+import { Subject } from 'rxjs'
 
 export interface ITranslation {
   [key: string]: string

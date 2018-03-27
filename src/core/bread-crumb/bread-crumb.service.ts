@@ -6,7 +6,8 @@ import {
   Router,
 } from '@angular/router'
 import { snakeCase } from 'lodash'
-import { Observable } from 'rxjs/Observable'
+import { Observable, combineLatest } from 'rxjs'
+import { distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators'
 
 import { TranslateService } from 'core/translate/translate.service'
 
@@ -24,19 +25,23 @@ export class BreadCrumbService {
     private router: Router,
     private translate: TranslateService,
   ) {
-    this.breadCrumbs$ = this.router.events
-      .filter(event => event instanceof NavigationEnd)
-      .distinctUntilChanged()
-      .map(() => this.getBreadCrumbs())
-      .combineLatest(this.translate.locale$)
-      .map(([breadCrumbs]) =>
+    this.breadCrumbs$ = combineLatest(
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd),
+        distinctUntilChanged(),
+        map(() => this.getBreadCrumbs()),
+      ),
+      this.translate.locale$,
+    ).pipe(
+      map(([breadCrumbs]) =>
         // do not display first level breadCrumb - landing/console
         breadCrumbs.slice(1).map(({ label, url }) => ({
           label: this.getBreadCrumbLabel(label),
           url,
         })),
-      )
-      .shareReplay(1)
+      ),
+      shareReplay(1),
+    )
   }
 
   getBreadCrumbs(

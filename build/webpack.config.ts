@@ -49,7 +49,7 @@ const cssLoaders = [
 
 const config: Configuration = {
   entry: {
-    app: ['styles/app.scss', 'zone.js', 'rx.shims', './src'],
+    app: ['styles/app.scss', 'zone.js', './src'],
   },
   output: {
     publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : ROUTE_BASE,

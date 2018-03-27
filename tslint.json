@@ -4,6 +4,7 @@
     "angular-whitespace": [true, "check-interpolation", "check-pipe", "check-semicolon"],
     "component-selector": [true, "element", "rb", "kebab-case"],
     "directive-selector": [true, "attribute", "rb", "camelCase"],
+    "import-blacklist": true,
     "interface-name": false,
     "max-classes-per-file": false,
     "member-access": false,
