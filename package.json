@@ -84,7 +84,7 @@
     "koa-webpack": "^3.0.2",
     "lint-staged": "^7.0.0",
     "lodash": "^4.17.5",
-    "mini-css-extract-plugin": "^0.2.0",
+    "mini-css-extract-plugin": "^0.3.0",
     "node-sass": "^4.8.3",
     "normalize.css": "^8.0.0",
     "npm-run-all": "^4.1.2",
