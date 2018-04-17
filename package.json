@@ -97,7 +97,7 @@
     "sass-loader": "^7.0.1",
     "sass-resources-loader": "^1.3.3",
     "style-loader": "^0.20.3",
-    "ts-node": "^5.0.1",
+    "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
     "tslint-angular": "^1.1.1",
     "tslint-config-prettier": "^1.10.0",
