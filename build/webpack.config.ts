@@ -118,7 +118,7 @@ const config: Configuration = {
       compilerOptions: {
         disableTypeScriptVersionCheck: true,
       },
-    } as any),
+    }),
     new MiniCssExtractPlugin({
       filename: `[name].[${hashType}].css`,
     }),
