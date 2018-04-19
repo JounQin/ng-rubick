@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router'
       [
         {
           path: '',
-          redirectTo: '/console',
+          redirectTo: '/console/dashboard',
           pathMatch: 'full',
         },
         {

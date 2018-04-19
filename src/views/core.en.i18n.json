@@ -8,5 +8,7 @@
   "nav_repository": "Image Repository",
   "nav_detail": "Detail",
   "toggle_locale": "切换语言",
-  "question_mark": "?"
+  "question_mark": "?",
+  "cancel": "Cancel",
+  "confirm": "Confrim"
 }

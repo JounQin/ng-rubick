@@ -7,5 +7,7 @@
   "nav_repository": "镜像仓库",
   "nav_detail": "详情",
   "toggle_locale": "Toggle Locale",
-  "question_mark": "？"
+  "question_mark": "？",
+  "cancel": "取消",
+  "confirm": "确定"
 }

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, TemplateRef, ViewChild } from '@angular/core'
 
 import { ModalService } from 'core/modal/modal.service'
 
+import { AnotherModalComponent } from './another-modal.component'
 import { MyModalComponent } from './my-modal.component'
 
 @Component({
@@ -9,6 +10,8 @@ import { MyModalComponent } from './my-modal.component'
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  @ViewChild('atModal') atModal: TemplateRef<AnotherModalComponent>
+
   constructor(private modal: ModalService) {}
 
   showModal() {
@@ -22,5 +25,15 @@ export class DashboardComponent {
     setTimeout(() => {
       modalRef.destroy()
     }, 5000)
+  }
+
+  showAnotherModal() {
+    this.modal.open(this.atModal)
+  }
+
+  closeModal(isConfirm: boolean) {
+    if (isConfirm) {
+      //
+    }
   }
 }

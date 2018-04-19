@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common'
 import { ModuleWithProviders, NgModule } from '@angular/core'
 
+import { TranslateModule } from '../translate/translate.module'
+
 import { ModalComponent } from './modal.component'
 import { ModalService } from './modal.service'
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   declarations: [ModalComponent],
   exports: [ModalComponent],
   entryComponents: [ModalComponent],

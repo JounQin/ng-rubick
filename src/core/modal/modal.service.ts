@@ -1,10 +1,13 @@
 import {
   ApplicationRef,
   ComponentFactoryResolver,
+  EventEmitter,
   Injectable,
   Injector,
+  TemplateRef,
   Type,
 } from '@angular/core'
+import { last } from 'lodash'
 
 import { ModalComponent } from './modal.component'
 
@@ -26,27 +29,46 @@ export class ModalService {
     private injector: Injector,
   ) {}
 
-  open(Component: Type<any>, modalOptions: ModalOptions = {}) {
+  open<T = any>(
+    Component: Type<T> | TemplateRef<T>,
+    modalOptions: ModalOptions = {},
+  ) {
     const { inputs, container, ...modalInputs } = modalOptions
 
     const modal = this.cfr.resolveComponentFactory(ModalComponent)
-    const componentFactory = this.cfr.resolveComponentFactory(Component)
-
     const modalRef = modal.create(this.injector)
-    const modalViewContainerRef = modalRef.instance.viewContainerRef
-    const componentRef = componentFactory.create(
-      modalViewContainerRef.parentInjector,
-    )
+    const modalInstance = modalRef.instance
 
-    Object.assign(modalRef.instance, {
-      ...modalInputs,
-      componentRef,
-    })
-    Object.assign(componentRef.instance, inputs)
+    if (Component instanceof TemplateRef) {
+      const viewRef: any = modalInstance.viewContainerRef.createEmbeddedView<T>(
+        Component,
+      )
+
+      modalInstance.close.subscribe((isConfrim: boolean) => {
+        const { instance: viewInstance }: any = last(viewRef._view.nodes)
+        if (viewInstance && viewInstance.close instanceof EventEmitter) {
+          viewInstance.close.emit(isConfrim)
+        }
+      })
+    } else {
+      const componentFactory = this.cfr.resolveComponentFactory(Component)
+
+      const modalViewContainerRef = modalInstance.viewContainerRef
+      const componentRef = componentFactory.create(
+        modalViewContainerRef.parentInjector,
+      )
+
+      Object.assign(modalInstance, {
+        ...modalInputs,
+        componentRef,
+      })
+      Object.assign(componentRef.instance, inputs)
+
+      modalViewContainerRef.insert(componentRef.hostView)
+    }
 
     this.appRef.attachView(modalRef.hostView)
     this.getContainer(container).appendChild(modalRef.location.nativeElement)
-    modalViewContainerRef.insert(componentRef.hostView)
 
     return modalRef
   }

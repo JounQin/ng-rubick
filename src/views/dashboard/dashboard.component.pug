@@ -3,4 +3,8 @@
   br
   button((click)="showModal()") Show Modal
   br
+  button((click)="showAnotherModal()") Show Another Modal
+  br
   a(routerLink="/landing/login") Go to Login
+ng-template(#atModal)
+  rb-at-modal(msg="Hello TemplateRef", (close)="closeModal($event)")

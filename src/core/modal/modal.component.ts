@@ -1,7 +1,9 @@
 import {
   Component,
   ComponentRef,
+  EventEmitter,
   Input,
+  Output,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core'
@@ -14,6 +16,8 @@ import {
 export class ModalComponent {
   @Input() componentRef: ComponentRef<any>
   @Input() title: string
+
+  @Output() close = new EventEmitter<boolean>()
 
   @ViewChild('body', {
     read: ViewContainerRef,

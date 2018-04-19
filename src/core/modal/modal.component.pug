@@ -5,4 +5,6 @@
       .modal-body
         | Body
         ng-template(#body)
-      .modal-footer Footer
+      .modal-footer
+        button((click)="close.emit(false)") {{ 'cancel' | translate }}
+        button((click)="close.emit(true)") {{ 'confirm' | translate }}

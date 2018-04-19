@@ -118,7 +118,7 @@ const config: Configuration = {
       compilerOptions: {
         disableTypeScriptVersionCheck: true,
       },
-    }),
+    } as any),
     new MiniCssExtractPlugin({
       filename: `[name].[${hashType}].css`,
     }),
@@ -142,12 +142,17 @@ const config: Configuration = {
         },
       }),
     ],
+    runtimeChunk: {
+      name: 'manifest',
+    },
     splitChunks: {
       name: 'vendors',
       chunks: 'initial',
-    },
-    runtimeChunk: {
-      name: 'manifest',
+      cacheGroups: {
+        vendors: {
+          test: ({ context }) => /node_modules/.test(context),
+        },
+      },
     },
   },
 }
