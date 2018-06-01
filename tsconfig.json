@@ -15,6 +15,7 @@
       "*": ["src/*", "node_modules/*"]
     },
     "plugins": [{ "name": "@angular/language-service" }],
+    "resolveJsonModule": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
