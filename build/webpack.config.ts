@@ -125,7 +125,6 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       favicon: 'src/assets/favicon.ico',
       template: 'src/index.pug',
-      chunksSortMode: 'none',
     }),
   ],
   performance: {
