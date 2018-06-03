@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.translate.setLocale(getLang())
+
     this.translate.locale$.subscribe(locale => {
       setCookie(LOCALE_COOKIE, locale, Infinity)
       document.documentElement.setAttribute(LANG, locale)
@@ -30,7 +32,5 @@ export class AppComponent implements OnInit {
           .filter(_ => _)
           .join(' - ')
     })
-
-    this.translate.setLocale(getLang())
   }
 }

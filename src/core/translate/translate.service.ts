@@ -1,5 +1,5 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core'
-import { Subject } from 'rxjs'
+import { BehaviorSubject } from 'rxjs'
 
 export interface ITranslation {
   [key: string]: string
@@ -16,15 +16,18 @@ export const Locales = new InjectionToken<string>('LOCALES')
 
 @Injectable()
 export class TranslateService {
-  locale$ = new Subject<string>()
-  defaultLocale$ = new Subject<string>()
+  locale$: BehaviorSubject<string>
+  defaultLocale$: BehaviorSubject<string>
 
   constructor(
     @Inject(Translations) private translations: ITranslations,
     @Inject(Locale) private locale: string,
     @Inject(DefaultLocale) private defaultLocale: string,
     @Inject(Locales) private locales: string[] = [],
-  ) {}
+  ) {
+    this.locale$ = new BehaviorSubject(locale)
+    this.defaultLocale$ = new BehaviorSubject(defaultLocale)
+  }
 
   private getValue = (input: any, key: string): string => {
     key = key.replace(/\[(\d+)\]/g, '.$1')
