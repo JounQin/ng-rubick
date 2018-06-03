@@ -32,7 +32,7 @@ const middlewares: Middleware[] = [
 
 if (process.env.NODE_ENV === 'development') {
   // tslint:disable-next-line:no-var-requires
-  middlewares.push(require('./dev').default)
+  require('./dev').default.then((middleware: Middleware) => app.use(middleware))
 } else {
   middlewares.push(
     staticCache('dist', {
