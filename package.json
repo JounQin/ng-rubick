@@ -74,7 +74,7 @@
     "@types/koa-compose": "^3.2.2",
     "@types/koa-compress": "^2.0.8",
     "@types/koa-logger": "^3.1.0",
-    "@types/koa-webpack": "^1.0.1",
+    "@types/koa-webpack": "^5.0.0",
     "@types/lodash": "^4.14.109",
     "@types/mini-css-extract-plugin": "^0.2.0",
     "@types/node": "10.1.4",
