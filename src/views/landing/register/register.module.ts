@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 
 import { SharedModule, mergeTranslations } from 'shared/shared.module'
-import { RegisterRoutingModule } from './register.routing.module'
 
 import { RegisterComponent } from './register.component'
+import { RegisterRoutingModule } from './register.routing.module'
 
 mergeTranslations(require.context('.', false, I18N_REGEX))
 

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 
 import { SharedModule, mergeTranslations } from 'shared/shared.module'
-import { ConsoleRoutingModule } from './console.routing.module'
 
 import { ConsoleComponent } from './console.component'
+import { ConsoleRoutingModule } from './console.routing.module'
 import { NavItemComponent } from './nav/nav-item.component'
 import { NavListComponent } from './nav/nav-list.component'
 

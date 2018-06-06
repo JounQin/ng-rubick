@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 
 import { SharedModule } from 'shared/shared.module'
-import { ImageRepositoryRoutingModule } from './image-repository.routing.module'
 
 import { ImageRepositoryDetailComponent } from './detail/image-repository-detail.component'
+import { ImageRepositoryRoutingModule } from './image-repository.routing.module'
 import { ImageRepositoryListComponent } from './list/image-repository-list.component'
 
 @NgModule({

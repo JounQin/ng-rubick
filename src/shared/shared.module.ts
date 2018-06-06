@@ -9,6 +9,7 @@ import {
   TranslateModule,
   mergeTranslations,
 } from 'core/translate/translate.module'
+
 import { DirectivesModule } from './directives/directives.module'
 import { PipesModule } from './pipes/pipes.module'
 

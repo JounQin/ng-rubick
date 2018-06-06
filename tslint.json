@@ -1,7 +1,17 @@
 {
-  "extends": ["tslint:recommended", "tslint-angular", "tslint-config-prettier", "tslint-plugin-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-angular",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
   "rules": {
-    "angular-whitespace": [true, "check-interpolation", "check-pipe", "check-semicolon"],
+    "angular-whitespace": [
+      true,
+      "check-interpolation",
+      "check-pipe",
+      "check-semicolon"
+    ],
     "component-selector": [true, "element", "rb", "kebab-case"],
     "directive-selector": [true, "attribute", "rb", "camelCase"],
     "import-blacklist": true,
@@ -15,6 +25,8 @@
     "ordered-imports": [
       true,
       {
+        "grouped-imports": true,
+        "import-sources-order": "lowercase-first",
         "named-imports-order": "lowercase-last"
       }
     ],

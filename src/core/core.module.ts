@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core'
 
-import { ServicesModule } from './services/services.module'
-
 import { Locale } from 'utils'
 
 import { BreadCrumbModule } from './bread-crumb/bread-crumb.module'
 import { ModalModule } from './modal/modal.module'
+import { ServicesModule } from './services/services.module'
 import {
   TranslateModule,
   mergeTranslations,

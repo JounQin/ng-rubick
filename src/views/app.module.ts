@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
 import { CoreModule, mergeTranslations } from 'core/core.module'
-import { AppRoutingModule } from './app.routing.module'
 
 import { AppComponent } from './app.component'
+import { AppRoutingModule } from './app.routing.module'
 
 mergeTranslations(require.context('.', false, I18N_REGEX))
 
