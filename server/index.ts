@@ -44,5 +44,5 @@ if (process.env.NODE_ENV === 'development') {
 app.use(compose(middlewares))
 
 app.listen(serverPort, serverHost, () =>
-  debug('app start listening on %s:%d', serverHost, serverPort),
+  debug('app start listening on http://%s:%d', serverHost, serverPort),
 )
