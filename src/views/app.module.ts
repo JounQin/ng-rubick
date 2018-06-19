@@ -3,12 +3,10 @@ import { FormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
-import { CoreModule, mergeTranslations } from 'core/core.module'
+import { CoreModule, TranslateService } from 'core/core.module'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routing.module'
-
-mergeTranslations(require.context('.', false, I18N_REGEX))
 
 @NgModule({
   imports: [
@@ -21,4 +19,8 @@ mergeTranslations(require.context('.', false, I18N_REGEX))
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private translate: TranslateService) {
+    this.translate.addTranslations(require.context('.', false, I18N_REGEX))
+  }
+}

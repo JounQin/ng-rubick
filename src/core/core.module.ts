@@ -5,10 +5,7 @@ import { Locale } from 'utils'
 import { BreadCrumbModule } from './bread-crumb/bread-crumb.module'
 import { ModalModule } from './modal/modal.module'
 import { ServicesModule } from './services/services.module'
-import {
-  TranslateModule,
-  mergeTranslations,
-} from './translate/translate.module'
+import { TranslateModule, TranslateService } from './translate/translate.module'
 
 @NgModule({
   imports: [
@@ -24,4 +21,4 @@ import {
 })
 export class CoreModule {}
 
-export { mergeTranslations }
+export { TranslateService }

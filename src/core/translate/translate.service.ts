@@ -1,5 +1,7 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core'
+import { merge } from 'lodash'
 import { BehaviorSubject } from 'rxjs'
+import { Context } from 'types'
 
 export interface ITranslation {
   [key: string]: string
@@ -9,7 +11,6 @@ export interface ITranslations {
   [locale: string]: ITranslation
 }
 
-export const Translations = new InjectionToken<ITranslations>('TRANSLATIONS')
 export const Locale = new InjectionToken<string>('LOCALE')
 export const DefaultLocale = new InjectionToken<string>('DEFAULT_LOCALE')
 export const Locales = new InjectionToken<string>('LOCALES')
@@ -19,8 +20,9 @@ export class TranslateService {
   locale$: BehaviorSubject<string>
   defaultLocale$: BehaviorSubject<string>
 
+  translations: ITranslations = Object.create(null)
+
   constructor(
-    @Inject(Translations) private translations: ITranslations,
     @Inject(Locale) private locale: string,
     @Inject(DefaultLocale) private defaultLocale: string,
     @Inject(Locales) private locales: string[] = [],
@@ -49,6 +51,25 @@ export class TranslateService {
     }
 
     return value
+  }
+
+  private getTranslations(context: Context<ITranslation>): ITranslations {
+    return context.keys().reduce((modules: ITranslations, key: string) => {
+      const lang = key.match(I18N_REGEX)[1]
+      Object.assign(modules[lang] || (modules[lang] = {}), context(key))
+      return modules
+    }, {})
+  }
+
+  addTranslations(
+    translationsOrContext: ITranslations | Context<ITranslation>,
+  ) {
+    return merge(
+      this.translations,
+      typeof translationsOrContext === 'function'
+        ? this.getTranslations(translationsOrContext)
+        : translationsOrContext,
+    )
   }
 
   get(key: string, params?: any, ignoreNonExist?: boolean) {

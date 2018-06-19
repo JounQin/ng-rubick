@@ -7,7 +7,7 @@ import { BreadCrumbModule } from 'core/bread-crumb/bread-crumb.module'
 import { ModalModule } from 'core/modal/modal.module'
 import {
   TranslateModule,
-  mergeTranslations,
+  TranslateService,
 } from 'core/translate/translate.module'
 
 import { DirectivesModule } from './directives/directives.module'
@@ -19,9 +19,9 @@ const SharedModules = [DirectivesModule, PipesModule]
 @NgModule({
   imports: [
     ...BuiltInModules,
-    BreadCrumbModule.forChild(),
+    BreadCrumbModule,
     ModalModule.forRoot(),
-    TranslateModule.forChild(),
+    TranslateModule,
     ...SharedModules,
   ],
   exports: [
@@ -36,4 +36,4 @@ const SharedModules = [DirectivesModule, PipesModule]
 })
 export class SharedModule {}
 
-export { mergeTranslations }
+export { TranslateService }

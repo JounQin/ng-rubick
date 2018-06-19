@@ -19,10 +19,4 @@ export class BreadCrumbModule {
       providers: [BreadCrumbService],
     }
   }
-
-  static forChild(): ModuleWithProviders {
-    return {
-      ngModule: BreadCrumbModule,
-    }
-  }
 }
