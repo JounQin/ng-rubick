@@ -52,7 +52,7 @@
     "@angular/platform-browser": "^6.0.5",
     "@angular/platform-browser-dynamic": "^6.0.5",
     "@angular/router": "^6.0.5",
-    "debug": "^3.1.0",
+    "debug": "^4.0.0",
     "env-cmd": "^8.0.2",
     "koa": "^2.5.1",
     "koa-compose": "^4.1.0",
