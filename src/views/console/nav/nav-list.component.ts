@@ -8,7 +8,8 @@ import { NavCategory } from 'types'
   styleUrls: ['./nav-list.component.scss'],
 })
 export class NavListComponent {
-  @Input() navConfig: NavCategory[]
+  @Input()
+  navConfig: NavCategory[]
 
   activeItem: string = null
   activeSubItem: string = null

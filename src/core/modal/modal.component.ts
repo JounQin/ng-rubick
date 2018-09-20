@@ -14,10 +14,14 @@ import {
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
-  @Input() componentRef: ComponentRef<any>
-  @Input() title: string
+  @Input()
+  componentRef: ComponentRef<any>
 
-  @Output() close = new EventEmitter<boolean>()
+  @Input()
+  title: string
+
+  @Output()
+  close = new EventEmitter<boolean>()
 
   @ViewChild('body', {
     read: ViewContainerRef,

@@ -11,8 +11,6 @@ import {
   __DEV__,
   hashType,
   resolve,
-  serverHost,
-  serverPort,
 } from './config'
 
 const sourceMap = __DEV__
@@ -21,11 +19,6 @@ const cssLoaders = [
   {
     loader: 'css-loader',
     options: {
-      minimize: !__DEV__ && {
-        discardComments: {
-          removeAll: true,
-        },
-      },
       sourceMap,
     },
   },
@@ -54,10 +47,16 @@ const cssLoaders = [
 
 const config: Configuration = {
   entry: {
-    app: ['styles/app.scss', 'zone.js', './src'],
+    app: [
+      'normalize.css/normalize.css',
+      'font-awesome/css/font-awesome.css',
+      'styles/app.scss',
+      'zone.js',
+      './src',
+    ],
   },
   output: {
-    publicPath: __DEV__ ? `http://${serverHost}:${serverPort}/` : ROUTE_BASE,
+    publicPath: ROUTE_BASE,
     path: resolve('dist'),
     filename: `[name].[${hashType}].js`,
   },
@@ -83,13 +82,16 @@ const config: Configuration = {
         use: ['html-loader', 'pug-plain-loader'],
       },
       {
-        test: /\.component\.scss$/,
-        use: ['exports-loader?module.exports.toString()', ...cssLoaders],
-      },
-      {
-        test: /\.scss$/,
-        exclude: /\.component\.scss$/,
-        use: [MiniCssExtractPlugin.loader, ...cssLoaders],
+        test: /\.s?css$/,
+        oneOf: [
+          {
+            test: /\.component\.scss$/,
+            use: ['exports-loader?module.exports.toString()', ...cssLoaders],
+          },
+          {
+            use: [MiniCssExtractPlugin.loader, ...cssLoaders],
+          },
+        ],
       },
       {
         test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
@@ -125,6 +127,7 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       favicon: 'src/assets/favicon.ico',
       template: 'src/index.pug',
+      chunksSortMode: 'none',
     }),
   ],
   performance: {
@@ -145,11 +148,11 @@ const config: Configuration = {
       name: 'manifest',
     },
     splitChunks: {
-      name: 'vendors',
-      chunks: 'initial',
       cacheGroups: {
         vendors: {
-          test: ({ context }) => /node_modules/.test(context),
+          name: 'vendors',
+          chunks: 'initial',
+          test: /node_modules/,
         },
       },
     },

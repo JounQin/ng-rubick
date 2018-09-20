@@ -10,7 +10,8 @@ import { MyModalComponent } from './my-modal.component'
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  @ViewChild('atModal') atModal: TemplateRef<AnotherModalComponent>
+  @ViewChild('atModal')
+  atModal: TemplateRef<AnotherModalComponent>
 
   constructor(private modal: ModalService) {}
 

@@ -21,7 +21,6 @@
     "no-console": [true, "log"],
     "no-empty": [true, "allow-empty-catch"],
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "ordered-imports": [
       true,
       {
@@ -31,10 +30,6 @@
       }
     ],
     "pipe-impure": true,
-    "pipe-naming": [true, "camelCase"],
     "prettier": true
-  },
-  "linterOptions": {
-    "exclude": ["node_modules/**"]
   }
 }

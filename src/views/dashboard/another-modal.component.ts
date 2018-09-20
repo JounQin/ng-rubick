@@ -5,9 +5,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
   template: `{{ msg }}`,
 })
 export class AnotherModalComponent implements OnInit {
-  @Input() msg: number
+  @Input()
+  msg: number
 
-  @Output() close = new EventEmitter<boolean>()
+  @Output()
+  close = new EventEmitter<boolean>()
 
   ngOnInit() {
     if (this.msg) {

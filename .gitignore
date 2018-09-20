@@ -1,5 +1,5 @@
 .awcache
-.env.local
+.dev.env
 dist
 sync
 node_modules

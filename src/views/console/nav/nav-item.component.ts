@@ -13,7 +13,8 @@ import { NavItem } from 'types'
   styleUrls: ['./nav-item.component.scss'],
 })
 export class NavItemComponent implements OnInit, OnDestroy {
-  @Input() item: NavItem
+  @Input()
+  item: NavItem
 
   prefix = '/console/'
 

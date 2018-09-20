@@ -9,7 +9,8 @@ import { Component, Input } from '@angular/core'
 </div>`,
 })
 export class MyModalComponent {
-  @Input() msg: string
+  @Input()
+  msg: string
 
   reverseMsg() {
     this.msg = this.msg

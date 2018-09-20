@@ -4,10 +4,13 @@ import { Directive, HostBinding, Input, OnInit } from '@angular/core'
   selector: '[rbBtn]',
 })
 export class ButtonDirective implements OnInit {
-  @Input() rbBtn: string
-  @Input() class: string
+  @Input()
+  rbBtn: string
+  @Input()
+  class: string
 
-  @HostBinding('class') classes: string
+  @HostBinding('class')
+  classes: string
 
   ngOnInit() {
     this.classes =
