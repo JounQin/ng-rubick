@@ -55,7 +55,7 @@
     "@angular/compiler-cli": "^6.1.8",
     "@angular/language-service": "^6.1.8",
     "@ngtools/webpack": "^6.2.3",
-    "@types/debug": "^0.0.30",
+    "@types/debug": "^0.0.31",
     "@types/html-webpack-plugin": "^3.2.0",
     "@types/koa": "^2.0.46",
     "@types/koa-compose": "^3.2.2",
