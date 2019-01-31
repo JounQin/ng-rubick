@@ -2,6 +2,9 @@ import { APP_BASE_HREF } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
+// tslint:disable-next-line: no-console
+console.log(HASH_MODE)
+
 @NgModule({
   imports: [
     RouterModule.forRoot(
@@ -22,6 +25,7 @@ import { RouterModule } from '@angular/router'
       ],
       {
         useHash: HASH_MODE,
+        // useHash: true,
       },
     ),
   ],
