@@ -6,7 +6,7 @@ import {
   Router,
 } from '@angular/router'
 import { snakeCase } from 'lodash'
-import { Observable, combineLatest } from 'rxjs'
+import { combineLatest, Observable } from 'rxjs'
 import { distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators'
 
 import { TranslateService } from 'core/translate/translate.service'

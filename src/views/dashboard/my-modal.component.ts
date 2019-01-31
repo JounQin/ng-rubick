@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core'
 
 @Component({
   template: `
-<div>
-  It is a modal!
-  <br>
-  <button (click)="reverseMsg()">{{ msg }}</button>
-</div>`,
+    <div>
+      It is a modal!
+      <br />
+      <button (click)="reverseMsg()">{{ msg }}</button>
+    </div>
+  `,
 })
 export class MyModalComponent {
   @Input()

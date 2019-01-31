@@ -55,6 +55,7 @@ export class ModalService {
 
       const modalViewContainerRef = modalInstance.viewContainerRef
       const componentRef = componentFactory.create(
+        // tslint:disable-next-line: deprecation
         modalViewContainerRef.parentInjector,
       )
 

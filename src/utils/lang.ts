@@ -1,4 +1,4 @@
-import { LOCALES, LOCALE_COOKIE, Locale } from './constants'
+import { Locale, LOCALE_COOKIE, LOCALES } from './constants'
 import { getCookie } from './cookie'
 
 export const getBrowserLang = (): string => {

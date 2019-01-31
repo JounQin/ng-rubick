@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { LANG, LOCALE_COOKIE, getLang, setCookie } from 'utils'
+import { getLang, LANG, LOCALE_COOKIE, setCookie } from 'utils'
 
 import { BreadCrumbService } from 'core/bread-crumb/bread-crumb.service'
 import { TranslateService } from 'core/translate/translate.service'

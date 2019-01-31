@@ -5,7 +5,7 @@ import {
   PipeTransform,
 } from '@angular/core'
 import { isEqual } from 'lodash'
-import { Subscription, merge } from 'rxjs'
+import { merge, Subscription } from 'rxjs'
 
 import { TranslateService } from './translate.service'
 

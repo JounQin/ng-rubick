@@ -5,12 +5,12 @@ import UglifyJsWebpackPlugin from 'uglifyjs-webpack-plugin'
 import webpack, { Configuration } from 'webpack'
 
 import {
-  HASH_MODE,
-  NODE_ENV,
-  ROUTE_BASE,
   __DEV__,
+  HASH_MODE,
   hashType,
+  NODE_ENV,
   resolve,
+  ROUTE_BASE,
 } from './config'
 
 const sourceMap = __DEV__

@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
   selector: 'rb-at-modal',
-  template: `{{ msg }}`,
+  template: `
+    {{ msg }}
+  `,
 })
 export class AnotherModalComponent implements OnInit {
   @Input()
