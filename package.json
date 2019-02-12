@@ -69,7 +69,7 @@
     "@types/koa-webpack": "^5.0.1",
     "@types/lodash": "^4.14.120",
     "@types/mini-css-extract-plugin": "^0.2.0",
-    "@types/node": "^10.12.20",
+    "@types/node": "^11.9.0",
     "@types/uglifyjs-webpack-plugin": "^1.1.0",
     "@types/webpack": "^4.4.24",
     "autoprefixer": "^9.4.7",
