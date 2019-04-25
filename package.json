@@ -99,7 +99,7 @@
     "style-loader": "^0.23.1",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
-    "tslint-angular": "^1.1.2",
+    "tslint-angular": "^2.0.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-plugin-prettier": "^2.0.1",
