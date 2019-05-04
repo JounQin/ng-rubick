@@ -44,7 +44,7 @@
     "@angular/platform-browser-dynamic": "^7.2.3",
     "@angular/router": "^7.2.3",
     "debug": "^4.1.1",
-    "env-cmd": "^8.0.2",
+    "env-cmd": "^9.0.0",
     "koa": "^2.7.0",
     "koa-compose": "^4.1.0",
     "koa-compress": "^3.0.0",
