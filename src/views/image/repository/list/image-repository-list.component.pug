@@ -1,3 +1,5 @@
 div
   | ImageRepositoryList
   a([routerLink]="['/console/image/repository/detail','repo_name']") Detail
+  ul(*ngIf="(repositories$ | async) && (repositories$ | async).length")
+    li(*ngFor="let repository of repositories$ | async") {{ repository.title }}

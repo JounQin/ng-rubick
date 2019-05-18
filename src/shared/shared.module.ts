@@ -12,9 +12,10 @@ import {
 
 import { DirectivesModule } from './directives/directives.module'
 import { PipesModule } from './pipes/pipes.module'
+import { ServicesModule } from './services/services.module'
 
 const BuiltInModules = [FormsModule]
-const SharedModules = [DirectivesModule, PipesModule]
+const SharedModules = [DirectivesModule, PipesModule, ServicesModule]
 
 @NgModule({
   imports: [

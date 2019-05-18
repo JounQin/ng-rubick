@@ -71,6 +71,10 @@ const config: Configuration = {
   module: {
     rules: [
       {
+        test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+        parser: { system: true },
+      },
+      {
         test: /\.html$/,
         loader: 'html-loader',
         options: {
@@ -79,7 +83,15 @@ const config: Configuration = {
       },
       {
         test: /\.pug$/,
-        use: ['html-loader', 'pug-plain-loader'],
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              root: resolve('src/assets'),
+            },
+          },
+          'pug-plain-loader',
+        ],
       },
       {
         test: /\.s?css$/,

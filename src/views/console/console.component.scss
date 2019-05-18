@@ -120,3 +120,14 @@
     height: 32px;
   }
 }
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.router-container {
+  padding: 20px;
+  flex: 1;
+}

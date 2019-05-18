@@ -12,5 +12,7 @@
   header
     .logo([ngClass]="{ active: !active }")
       img(src="~assets/logo-small.svg")
-  rb-bread-crumb
-  router-outlet
+  .right-container
+    rb-bread-crumb
+    .router-container.scroll-y
+      router-outlet

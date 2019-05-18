@@ -1,4 +1,6 @@
 form((submit)="login($event)")
+  h1(*ngIf="username$ | async")
+    | Welcome {{ username$ | async }}!
   div {{ (isAccount ? 'account_login' : 'user_login') | translate }}
   button.btn-block(rbBtn="primary", type="submit") {{ 'login' | translate }}
   a([routerLink]="'/landing/login' + (isAccount ? '' : '/account')", [replaceUrl]="true") {{ (isAccount ? 'user_login' : 'account_login') | translate }} »
