@@ -11,7 +11,7 @@ import { TranslateService } from './translate.service'
 
 @Pipe({
   name: 'translate',
-  // tslint:disable-next-line:pipe-impure
+  // tslint:disable-next-line: no-pipe-impure
   pure: false,
 })
 export class TranslatePipe implements PipeTransform, OnDestroy {

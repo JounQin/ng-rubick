@@ -28,6 +28,7 @@ export class NavItemComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.active$ = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd),
+      // tslint:disable-next-line: deprecation
       startWith(null),
       map(() => this.router.url),
       distinctUntilChanged(),

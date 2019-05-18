@@ -25,14 +25,14 @@ export class BreadCrumbService {
     private router: Router,
     private translate: TranslateService,
   ) {
-    this.breadCrumbs$ = combineLatest(
+    this.breadCrumbs$ = combineLatest([
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd),
         distinctUntilChanged(),
         map(() => this.getBreadCrumbs()),
       ),
       this.translate.locale$,
-    ).pipe(
+    ]).pipe(
       map(([breadCrumbs]) =>
         // do not display first level breadCrumb - landing/console
         breadCrumbs.slice(1).map(({ label, url }) => ({
