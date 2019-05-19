@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core'
+import { ComponentFactoryResolver, NgModule } from '@angular/core'
 
+import { MonkeyPatchComponentFactoryResolver } from 'core/services/monkey-patch-component-factory-resolver'
 import { SharedModule } from 'shared/shared.module'
 
 import { DashboardRoutingModule } from './dashboard.routing.module'
@@ -13,4 +14,11 @@ import { MyModalComponent } from './my-modal.component'
   declarations: [AnotherModalComponent, DashboardComponent, MyModalComponent],
   entryComponents: [MyModalComponent],
 })
-export class DashboardModule {}
+export class DashboardModule {
+  constructor(
+    private cfr: ComponentFactoryResolver,
+    private monkeyPatch: MonkeyPatchComponentFactoryResolver,
+  ) {
+    this.monkeyPatch.register(this.cfr)
+  }
+}

@@ -71,7 +71,7 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+        test: /\.[jt]s$/,
         parser: { system: true },
       },
       {

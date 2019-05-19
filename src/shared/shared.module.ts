@@ -21,7 +21,7 @@ const SharedModules = [DirectivesModule, PipesModule, ServicesModule]
   imports: [
     ...BuiltInModules,
     BreadCrumbModule,
-    ModalModule.forRoot(),
+    ModalModule.forChild(),
     TranslateModule,
     ...SharedModules,
   ],
