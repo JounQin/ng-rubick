@@ -1696,9 +1696,9 @@ copy-descriptor@^0.1.0:
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
 core-js@^2.4.0:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
-  integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.6.tgz#00eb6d6bf815471cc16d8563edd7d38786dec50b"
+  integrity sha512-Mt/LaAym54NXnrjEMdo918cT2h70tqb/Yl7T3uPHQHRm5SxVoqlKmerUy4mL11k8saSBDWQ7ULIHxmeFyT3pfg==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -6902,10 +6902,10 @@ tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tslint-angular@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/tslint-angular/-/tslint-angular-2.0.3.tgz#a8e187c951683d32ec56d4d981a7efd2dd9b6faf"
-  integrity sha512-Ml2RDWx/kTyilJbnH013fNiWlYka9AbaYomyMxx/BS1A6Cq3XTEDKF1eZqAe8rwfLnaJzpNd/8IUcLMmpxXPLg==
+tslint-angular@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/tslint-angular/-/tslint-angular-3.0.1.tgz#9f711bca628f333adc28771432ca683d3eafc3df"
+  integrity sha512-tujN36aUgeqAHE59mKUAjVHvN4jPFBcg/VXlqx6TnsN0DJUfNi0FUSErqoBuLLA0Trt19w9lxyhECKUTrI6SqA==
 
 tslint-config-prettier@^1.18.0:
   version "1.18.0"

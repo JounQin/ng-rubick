@@ -7,7 +7,6 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
-    "angular-whitespace": false,
     "component-selector": [true, "element", "rb", "kebab-case"],
     "directive-selector": [true, "attribute", "rb", "camelCase"],
     "import-blacklist": true,
