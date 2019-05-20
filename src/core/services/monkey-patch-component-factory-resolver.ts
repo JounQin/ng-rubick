@@ -2,7 +2,6 @@ import {
   ComponentFactory,
   ComponentFactoryResolver,
   Injectable,
-  Injector,
   Type,
 } from '@angular/core'
 
