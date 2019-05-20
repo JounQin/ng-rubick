@@ -22,7 +22,7 @@
     ],
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext"
+    "target": "es5"
   },
   "exclude": ["node_modules"]
 }

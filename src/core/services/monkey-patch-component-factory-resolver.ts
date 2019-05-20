@@ -38,7 +38,7 @@ export class MonkeyPatchComponentFactoryResolver
 
     this.calling = true
 
-    for (const resolver of this.resolvers) {
+    for (const resolver of Array.from(this.resolvers)) {
       try {
         const factory = resolver.resolveComponentFactory(Component)
         if (factory) {
