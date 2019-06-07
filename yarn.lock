@@ -156,10 +156,10 @@
   dependencies:
     "@hapi/hoek" "6.x.x"
 
-"@ngrx/effects@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.4.0.tgz#7d1977538cf85e42ab48fd648acdfbc8b52f93d3"
-  integrity sha512-YjgB17WnLCBDPjAkHduKWsLFSGLZryPaTjY3EIvMF+WTRPDlgC5SAv2n7p3YIei6g6IYcEvOwLWBqZHFUXTgBw==
+"@ngrx/effects@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.0.0.tgz#56da399423c2d8c690d9f38971f5fd4234ee8bb2"
+  integrity sha512-8ho26Cq1Kh+mrIhoq5fHmXYXdyeng8vabVJ+9GooFJBCNGNuE43nfFWH6x9ksXOpA075iGE5SMPEw6KceTX2eg==
 
 "@ngrx/entity@^7.4.0":
   version "7.4.0"
