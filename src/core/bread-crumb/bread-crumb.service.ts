@@ -51,11 +51,11 @@ export class BreadCrumbService {
   ): BreadCrumb[] {
     const { firstChild, routeConfig, url } = route
 
-    let path: string
-    let breadCrumb: string
+    let path!: string
+    let breadCrumb!: string
 
     if (routeConfig) {
-      path = routeConfig.path
+      path = routeConfig.path!
       const data = routeConfig.data
       breadCrumb = data && data.breadCrumb
     }

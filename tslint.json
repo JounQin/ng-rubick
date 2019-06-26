@@ -7,18 +7,19 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
+    "angular-whitespace": false,
     "component-selector": [true, "element", "rb", "kebab-case"],
     "directive-selector": [true, "attribute", "rb", "camelCase"],
     "import-blacklist": true,
     "interface-name": false,
-    "max-classes-per-file": false,
-    "member-access": false,
+    "member-access": [true, "no-public"],
     "no-console": [true, "log"],
-    "no-floating-promises": false,
     "no-empty": [true, "allow-empty-catch"],
-    "no-pipe-impure": true,
+    "no-floating-promises": false,
+    "no-non-null-assertion": false,
     "no-unused-expression": true,
-    "prettier": true,
-    "strict-type-predicates": false
+    "no-pipe-impure": true,
+    "strict-type-predicates": false,
+    "prettier": true
   }
 }

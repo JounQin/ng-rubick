@@ -4,7 +4,7 @@ import { getCookie } from './cookie'
 export const getBrowserLang = (): string => {
   const { navigator } = window
 
-  let browserLang: string = navigator.languages ? navigator.languages[0] : null
+  let browserLang: string = navigator.languages && navigator.languages[0]
 
   browserLang =
     browserLang ||
@@ -23,9 +23,11 @@ export const getBrowserLang = (): string => {
   return browserLang
 }
 
-export const getLang = (): string => {
+export const getLang = (): string | undefined => {
   if (
+    // tslint:disable-next-line: strict-type-predicates
     typeof window === 'undefined' ||
+    // tslint:disable-next-line: strict-type-predicates
     typeof window.navigator === 'undefined'
   ) {
     return undefined

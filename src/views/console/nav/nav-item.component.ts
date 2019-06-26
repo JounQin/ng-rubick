@@ -14,14 +14,14 @@ import { NavItem } from 'types'
 })
 export class NavItemComponent implements OnInit, OnDestroy {
   @Input()
-  item: NavItem
+  item!: NavItem
 
   prefix = '/console/'
 
-  expanded: boolean = null
+  expanded = false
 
-  active$: Observable<boolean>
-  activeSub: Subscription
+  active$!: Observable<boolean>
+  activeSub!: Subscription
 
   constructor(private router: Router, public translate: TranslateService) {}
 
