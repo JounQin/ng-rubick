@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { select, Store } from '@ngrx/store'
+
 import { State } from 'core/store/reducers'
-import { Login } from 'core/store/user/actions'
+import { login } from 'core/store/user/actions'
 
 @Component({
   templateUrl: './login.component.pug',
@@ -23,6 +24,6 @@ export class LoginComponent implements OnInit {
 
   login(e: Event) {
     e.preventDefault()
-    this.store.dispatch(new Login({ username: 'JounQin', password: '' }))
+    this.store.dispatch(login({ username: 'JounQin', password: '' }))
   }
 }

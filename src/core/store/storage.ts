@@ -13,7 +13,7 @@ function saveStorage(state: any) {
 }
 
 export function storage(reducer: ActionReducer<any>): ActionReducer<any> {
-  const restored = JSON.parse(localStorage.getItem(STORAGE_KEY))
+  const restored = JSON.parse(localStorage.getItem(STORAGE_KEY)!)
 
   // tslint:disable-next-line: only-arrow-functions
   return function(state, action) {
