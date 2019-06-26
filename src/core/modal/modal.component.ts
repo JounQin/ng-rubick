@@ -24,6 +24,7 @@ export class ModalComponent {
   close = new EventEmitter<boolean>()
 
   @ViewChild('body', {
+    static: false,
     read: ViewContainerRef,
   })
   viewContainerRef: ViewContainerRef
