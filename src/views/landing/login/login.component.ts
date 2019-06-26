@@ -9,7 +9,7 @@ import { Login } from 'core/store/user/actions'
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  isAccount: boolean
+  isAccount!: boolean
 
   username$ = this.store.pipe(select(state => state.user.username))
 

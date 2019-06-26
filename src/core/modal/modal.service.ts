@@ -44,10 +44,10 @@ export class ModalService {
         Component,
       )
 
-      modalInstance.close.subscribe((isConfrim: boolean) => {
+      modalInstance.close.subscribe((isConfirm: boolean) => {
         const { instance: viewInstance }: any = last(viewRef._view.nodes)
         if (viewInstance && viewInstance.close instanceof EventEmitter) {
-          viewInstance.close.emit(isConfrim)
+          viewInstance.close.emit(isConfirm)
         }
       })
     } else {
@@ -68,7 +68,7 @@ export class ModalService {
     }
 
     this.appRef.attachView(modalRef.hostView)
-    this.getContainer(container).appendChild(modalRef.location.nativeElement)
+    this.getContainer(container)!.appendChild(modalRef.location.nativeElement)
 
     return modalRef
   }

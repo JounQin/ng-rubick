@@ -18,6 +18,7 @@
         "name": "@angular/language-service"
       }
     ],
+    "skipLibCheck": true,
     "strict": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,

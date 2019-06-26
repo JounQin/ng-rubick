@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core'
 })
 export class MyModalComponent {
   @Input()
-  msg: string
+  msg!: string
 
   reverseMsg() {
     this.msg = this.msg

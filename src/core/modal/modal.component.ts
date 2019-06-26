@@ -15,10 +15,10 @@ import {
 })
 export class ModalComponent {
   @Input()
-  componentRef: ComponentRef<any>
+  componentRef?: ComponentRef<any>
 
   @Input()
-  title: string
+  title?: string
 
   @Output()
   close = new EventEmitter<boolean>()
@@ -27,5 +27,5 @@ export class ModalComponent {
     static: false,
     read: ViewContainerRef,
   })
-  viewContainerRef: ViewContainerRef
+  viewContainerRef!: ViewContainerRef
 }

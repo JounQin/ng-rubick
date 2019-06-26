@@ -5,12 +5,12 @@ import { Directive, HostBinding, Input, OnInit } from '@angular/core'
 })
 export class ButtonDirective implements OnInit {
   @Input()
-  rbBtn: string
+  rbBtn?: string
   @Input()
-  class: string
+  class?: string
 
   @HostBinding('class')
-  classes: string
+  classes!: string
 
   ngOnInit() {
     this.classes =
