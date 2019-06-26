@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.translate.setLocale(getLang())
+    this.translate.setLocale(getLang()!)
 
     this.translate.locale$.subscribe(locale => {
       setCookie(LOCALE_COOKIE, locale, Infinity)

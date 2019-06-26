@@ -15,11 +15,11 @@ import { TranslateService } from './translate.service'
   pure: false,
 })
 export class TranslatePipe implements PipeTransform, OnDestroy {
-  value: string
-  lastKey: string
+  value!: string
+  lastKey?: string | null
   lastParams: any
 
-  onChange: Subscription
+  onChange!: Subscription | null
 
   constructor(
     private cdr: ChangeDetectorRef,

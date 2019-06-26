@@ -13,7 +13,7 @@ export const hashType = __DEV__ ? 'hash' : 'contenthash'
 
 export const serverHost = process.env.HOST || '0.0.0.0'
 
-export const serverPort = +process.env.PORT || 4000
+export const serverPort = +(process.env.PORT || 4000)
 
 export const { resolve } = path
 

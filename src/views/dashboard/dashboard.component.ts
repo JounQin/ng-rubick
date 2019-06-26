@@ -11,7 +11,7 @@ import { MyModalComponent } from './my-modal.component'
 })
 export class DashboardComponent {
   @ViewChild('atModal', { static: false })
-  atModal: TemplateRef<AnotherModalComponent>
+  atModal!: TemplateRef<AnotherModalComponent>
 
   constructor(private modal: ModalService) {}
 

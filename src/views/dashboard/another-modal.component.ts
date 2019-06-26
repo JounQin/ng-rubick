@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 })
 export class AnotherModalComponent implements OnInit {
   @Input()
-  msg: number
+  msg?: number
 
   @Output()
   close = new EventEmitter<boolean>()

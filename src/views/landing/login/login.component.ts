@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  isAccount: boolean
+  isAccount!: boolean
 
   constructor(private route: ActivatedRoute) {}
 
