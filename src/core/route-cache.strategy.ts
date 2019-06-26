@@ -15,7 +15,7 @@ export class RouteCacheStrategy extends RouteReuseStrategy {
   }
 
   shouldDetach(route: ActivatedRouteSnapshot) {
-    const { data } = route.routeConfig
+    const { data } = route.routeConfig!
     return !data || data.keepAlive !== false
   }
 
@@ -28,7 +28,7 @@ export class RouteCacheStrategy extends RouteReuseStrategy {
   }
 
   retrieve(route: ActivatedRouteSnapshot) {
-    return this.storedRoutes.get(this.getRouteUrl(route))
+    return this.storedRoutes.get(this.getRouteUrl(route))!
   }
 
   shouldReuseRoute(

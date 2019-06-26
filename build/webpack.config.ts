@@ -1,4 +1,5 @@
 import { AngularCompilerPlugin } from '@ngtools/webpack'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import UglifyJsWebpackPlugin from 'uglifyjs-webpack-plugin'
@@ -71,8 +72,10 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.[jt]s$/,
-        parser: { system: true },
+        // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
+        // Removing this will cause deprecation warnings to appear.
+        test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+        parser: { system: true }, // enable SystemJS
       },
       {
         test: /\.html$/,
@@ -133,6 +136,7 @@ const config: Configuration = {
         disableTypeScriptVersionCheck: true,
       },
     }),
+    new CopyWebpackPlugin([resolve('src/assets')]),
     new MiniCssExtractPlugin({
       filename: `[name].[${hashType}].css`,
     }),
@@ -149,6 +153,8 @@ const config: Configuration = {
     minimize: !__DEV__,
     minimizer: [
       new UglifyJsWebpackPlugin({
+        cache: true,
+        parallel: true,
         uglifyOptions: {
           output: {
             comments: false,

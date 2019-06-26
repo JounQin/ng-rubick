@@ -1,5 +1,4 @@
 .awcache
-.dev.env
 dist
 sync
 node_modules

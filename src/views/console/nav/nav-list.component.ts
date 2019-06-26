@@ -9,8 +9,8 @@ import { NavCategory } from 'types'
 })
 export class NavListComponent {
   @Input()
-  navConfig: NavCategory[]
+  navConfig!: NavCategory[]
 
-  activeItem: string = null
-  activeSubItem: string = null
+  activeItem?: string
+  activeSubItem?: string
 }

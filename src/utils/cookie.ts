@@ -70,6 +70,7 @@ function setCookie(
   document.cookie =
     encodeURIComponent(nameOrOptions) +
     '=' +
+    // tslint:disable-next-line: strict-type-predicates
     encodeURIComponent(value == null ? '' : value) +
     sExpires +
     (domain ? '; domain=' + domain : '') +

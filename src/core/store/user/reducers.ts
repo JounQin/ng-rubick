@@ -1,17 +1,19 @@
-import { ActionsUnion, ActionTypes } from './actions'
+import { Action, createReducer, on } from '@ngrx/store'
+
+import { loginSuccess } from './actions'
 
 export interface State {
   username?: string
 }
 
-export function reducer(state: State = {}, action: ActionsUnion) {
-  switch (action.type) {
-    case ActionTypes.LOGIN_SUCCESS: {
-      return {
-        ...state,
-        username: action.payload,
-      }
-    }
-  }
-  return state
+export const userReducer = createReducer<State>(
+  {},
+  on(loginSuccess, (state, action) => ({
+    ...state,
+    username: action.username,
+  })),
+)
+
+export function reducer(state: State, action: Action) {
+  return userReducer(state, action)
 }

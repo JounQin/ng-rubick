@@ -31,7 +31,7 @@ export class TranslateService {
     this.defaultLocale$ = new BehaviorSubject(defaultLocale)
   }
 
-  private getValue = (input: any, key: string): string => {
+  private getValue = (input: any, key: string): string | undefined => {
     key = key.replace(/\[(\d+)\]/g, '.$1')
     let value = input
 
@@ -55,7 +55,7 @@ export class TranslateService {
 
   private getTranslations(context: Context<ITranslation>): ITranslations {
     return context.keys().reduce((modules: ITranslations, key: string) => {
-      const lang = key.match(I18N_REGEX)[1]
+      const lang = key.match(I18N_REGEX)![1]
       Object.assign(modules[lang] || (modules[lang] = {}), context(key))
       return modules
     }, {})
@@ -95,8 +95,9 @@ export class TranslateService {
 
     value =
       value &&
-      value.replace(/{([^{}]+)}/g, (_matched, $0) =>
-        getValue(params, $0.trim()),
+      value.replace(
+        /{([^{}]+)}/g,
+        (_matched, $0: string) => getValue(params, $0.trim())!,
       )
 
     return value === undefined ? key : value

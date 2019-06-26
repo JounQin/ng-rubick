@@ -8,16 +8,16 @@ import {
 @Injectable()
 export class MonkeyPatchComponentFactoryResolver
   implements ComponentFactoryResolver {
-  private rcf: <T>(component: Type<T>) => ComponentFactory<T>
+  private rcf!: <T>(component: Type<T>) => ComponentFactory<T>
 
   private resolvers = new Set<ComponentFactoryResolver>()
 
-  private calling: boolean
+  private calling!: boolean
 
   constructor(private rootCfr: ComponentFactoryResolver) {}
 
   patch() {
-    this.rcf = this.rootCfr.resolveComponentFactory
+    this.rcf = this.rootCfr.resolveComponentFactory.bind(this.rootCfr)
     this.rootCfr.resolveComponentFactory = this.resolveComponentFactory.bind(
       this,
     )
@@ -33,7 +33,7 @@ export class MonkeyPatchComponentFactoryResolver
 
   resolveComponentFactory<T>(Component: Type<T>): ComponentFactory<T> {
     if (this.calling) {
-      return null
+      return null!
     }
 
     this.calling = true
@@ -49,7 +49,7 @@ export class MonkeyPatchComponentFactoryResolver
     }
 
     try {
-      return this.rcf.call(this.rootCfr, Component)
+      return this.rcf(Component)
     } finally {
       this.calling = false
     }

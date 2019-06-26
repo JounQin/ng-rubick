@@ -1,5 +1,5 @@
 ol
-  li(*ngFor="let breadCrumb of breadCrumbs$ | async; index as i; first as isFirst; last as isLast")
+  li(*ngFor="let breadCrumb of breadCrumb.breadCrumbs$ | async; index as i; first as isFirst; last as isLast")
     span(*ngIf="i") /
     span(*ngIf="isFirst || isLast") {{ breadCrumb.label }}
     a(*ngIf!="!isFirst && !isLast", [routerLink]="[breadCrumb.url]") {{ breadCrumb.label }}

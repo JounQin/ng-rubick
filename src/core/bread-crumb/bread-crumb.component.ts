@@ -1,19 +1,12 @@
-import { Component, OnInit } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Component } from '@angular/core'
 
-import { BreadCrumb, BreadCrumbService } from './bread-crumb.service'
+import { BreadCrumbService } from './bread-crumb.service'
 
 @Component({
   selector: 'rb-bread-crumb',
   templateUrl: './bread-crumb.component.pug',
   styleUrls: ['./bread-crumb.component.scss'],
 })
-export class BreadCrumbComponent implements OnInit {
-  breadCrumbs$: Observable<BreadCrumb[]>
-
-  constructor(private breadCrumb: BreadCrumbService) {}
-
-  ngOnInit() {
-    this.breadCrumbs$ = this.breadCrumb.breadCrumbs$
-  }
+export class BreadCrumbComponent {
+  constructor(public breadCrumb: BreadCrumbService) {}
 }

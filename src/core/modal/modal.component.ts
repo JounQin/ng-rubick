@@ -15,16 +15,17 @@ import {
 })
 export class ModalComponent {
   @Input()
-  componentRef: ComponentRef<any>
+  componentRef?: ComponentRef<any>
 
   @Input()
-  title: string
+  title?: string
 
   @Output()
   close = new EventEmitter<boolean>()
 
   @ViewChild('body', {
+    static: false,
     read: ViewContainerRef,
   })
-  viewContainerRef: ViewContainerRef
+  viewContainerRef!: ViewContainerRef
 }

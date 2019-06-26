@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { select, Store } from '@ngrx/store'
+
 import { State } from 'core/store/reducers'
-import { Login } from 'core/store/user/actions'
+import { login } from 'core/store/user/actions'
 
 @Component({
   templateUrl: './login.component.pug',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  isAccount: boolean
+  isAccount!: boolean
 
   username$ = this.store.pipe(select(state => state.user.username))
 
@@ -23,6 +24,6 @@ export class LoginComponent implements OnInit {
 
   login(e: Event) {
     e.preventDefault()
-    this.store.dispatch(new Login({ username: 'JounQin', password: '' }))
+    this.store.dispatch(login({ username: 'JounQin', password: '' }))
   }
 }
