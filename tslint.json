@@ -12,6 +12,7 @@
     "directive-selector": [true, "attribute", "rb", "camelCase"],
     "import-blacklist": true,
     "interface-name": false,
+    "max-classes-per-file": [true, 2],
     "member-access": [true, "no-public"],
     "no-console": [true, "log"],
     "no-empty": [true, "allow-empty-catch"],

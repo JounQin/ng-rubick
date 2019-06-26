@@ -43,6 +43,7 @@
     "@angular/platform-browser": "^8.0.2",
     "@angular/platform-browser-dynamic": "^8.0.2",
     "@angular/router": "^8.0.2",
+    "@ngrx/store": "^8.0.1",
     "debug": "^4.1.1",
     "env-cmd": "^9.0.3",
     "koa": "^2.7.0",
