@@ -2,14 +2,14 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.0.4.tgz#4a3e407a4df1bbefb610aebd8255755f14e7a0f5"
-  integrity sha512-90Eer4A3vDqH8Ve4kIWD1IWcnEctxYECKj1cJ+yzyu+FqER+XgpnACX42iP2B+ZR/4NcGTxhQSYGAOkjJf2P8g==
+"@angular-devkit/core@8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.1.0.tgz#eb91d2f620ae75533c301e549249ae2287f6e2f6"
+  integrity sha512-Xdtkrs62WMMR1BnSfpBvwjapRYalvArewAi7NXo0QxIFWPhQGbgSqT5PJMie4V3vHHNMbcC9cPzjKGjwwF8FHw==
   dependencies:
     ajv "6.10.0"
     fast-json-stable-stringify "2.0.0"
-    magic-string "0.25.2"
+    magic-string "0.25.3"
     rxjs "6.4.0"
     source-map "0.7.3"
 
@@ -187,12 +187,12 @@
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.0.1.tgz#5391498d50978ff1bfdbf4e5b04cb647677a5168"
   integrity sha512-B6HY8TCFZ4+bUfJAJatF42+F33Qboo7zKc+gxTi6eEioKvNqWkb22K4De5HV2j/l/blXvMOPMSO1Rf/sGqID0w==
 
-"@ngtools/webpack@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.0.4.tgz#ba2dd453940d8bc10b7a75604aaadc2b939ba030"
-  integrity sha512-IbfSONyC2jAaSRXwsXZLa9VDkOa7fgRVql6kGQHoZQR2DJcQZ56b6A29PEWhy5g2oiI8ZSQFklI5tc9l2fPmdw==
+"@ngtools/webpack@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.1.0.tgz#a400b1ab3d2495a17e853cf3a7e9c809e3131e5f"
+  integrity sha512-yUtIQ/0P2xPvUFpOkcKtoLcMzsx+QDUn8NWsqjKwD1HpAdujFC50WtSY8409lQjF+O1Kg6884lc+zbaasZM7Vg==
   dependencies:
-    "@angular-devkit/core" "8.0.4"
+    "@angular-devkit/core" "8.1.0"
     enhanced-resolve "4.1.0"
     rxjs "6.4.0"
     tree-kill "1.2.1"
@@ -4202,7 +4202,14 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-magic-string@0.25.2, magic-string@^0.25.0:
+magic-string@0.25.3:
+  version "0.25.3"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.3.tgz#34b8d2a2c7fec9d9bdf9929a3fd81d271ef35be9"
+  integrity sha512-6QK0OpF/phMz0Q2AxILkX2mFhi7m+WMwTRg0LQKq/WBB0cDP4rYH3Wp4/d3OTXlrPLVJT/RFqj8tFeAR4nk8AA==
+  dependencies:
+    sourcemap-codec "^1.4.4"
+
+magic-string@^0.25.0:
   version "0.25.2"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.2.tgz#139c3a729515ec55e96e69e82a11fe890a293ad9"
   integrity sha512-iLs9mPjh9IuTtRsqqhNGYcZXGei0Nh/A4xirrsqW7c+QhKVFL2vm7U09ru6cHRD22azaP/wMDgI+HCqbETMTtg==
