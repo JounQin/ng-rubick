@@ -62,7 +62,7 @@
   "devDependencies": {
     "@angular/compiler": "^8.0.2",
     "@angular/compiler-cli": "^8.0.2",
-    "@angular/language-service": "^8.0.2",
+    "@angular/language-service": "^8.1.0",
     "@bazel/typescript": "^0.32.2",
     "@ngrx/store-devtools": "^8.0.1",
     "@ngtools/webpack": "^8.1.0",
