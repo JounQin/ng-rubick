@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.1.0.tgz#eb91d2f620ae75533c301e549249ae2287f6e2f6"
-  integrity sha512-Xdtkrs62WMMR1BnSfpBvwjapRYalvArewAi7NXo0QxIFWPhQGbgSqT5PJMie4V3vHHNMbcC9cPzjKGjwwF8FHw==
+"@angular-devkit/core@8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.1.1.tgz#da7bb908ce42cb5c5fde08d600880b6fda486056"
+  integrity sha512-Wq/6HOkT3gSOQRiSmHijzy/bzEqzI44Ho4S/NIZ192M/m28f46Neu2LV9juniQKnAAZ8RmHnXecxq3KjvCRkNg==
   dependencies:
     ajv "6.10.0"
     fast-json-stable-stringify "2.0.0"
@@ -180,12 +180,12 @@
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.0.1.tgz#5391498d50978ff1bfdbf4e5b04cb647677a5168"
   integrity sha512-B6HY8TCFZ4+bUfJAJatF42+F33Qboo7zKc+gxTi6eEioKvNqWkb22K4De5HV2j/l/blXvMOPMSO1Rf/sGqID0w==
 
-"@ngtools/webpack@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.1.0.tgz#a400b1ab3d2495a17e853cf3a7e9c809e3131e5f"
-  integrity sha512-yUtIQ/0P2xPvUFpOkcKtoLcMzsx+QDUn8NWsqjKwD1HpAdujFC50WtSY8409lQjF+O1Kg6884lc+zbaasZM7Vg==
+"@ngtools/webpack@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.1.1.tgz#9dd00d9f895379ed828fe2e7572c4682f0733e21"
+  integrity sha512-BUIXvRr0Ra8nyQGgKGNhEjWpqvfcLfha5yY2OdgWe6Ogw7BDgpImiTaCFHf6Y8KmbgbbFA8vhcnfGWc5saA9Ig==
   dependencies:
-    "@angular-devkit/core" "8.1.0"
+    "@angular-devkit/core" "8.1.1"
     enhanced-resolve "4.1.0"
     rxjs "6.4.0"
     tree-kill "1.2.1"
